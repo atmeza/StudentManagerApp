@@ -60,12 +60,12 @@
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/color/design_tint_password_toggle.xml"
     },
     {
-        "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color/abc_tint_spinner.xml"
-    },
-    {
         "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color/abc_tint_spinner.xml"
     },
     {
         "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",

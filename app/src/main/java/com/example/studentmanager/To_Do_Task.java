@@ -1,3 +1,5 @@
+package com.example.studentmanager;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
