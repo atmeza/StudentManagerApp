@@ -140,12 +140,12 @@
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/res/drawable/design_fab_background.xml"
     },
     {
-        "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_radio_material.xml"
-    },
-    {
         "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable/abc_btn_radio_material.xml"
     },
     {
         "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
