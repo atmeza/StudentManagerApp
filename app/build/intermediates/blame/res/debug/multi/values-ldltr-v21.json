@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+        "outputFile": "C:\\Users\\Des\\AndroidStudioProjects\\Student_Manager_Redux\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 163
                 },
                 "from": {
-                    "file": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "file": "C:\\Users\\Des\\AndroidStudioProjects\\Student_Manager_Redux\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">StudentManager</string>
-    <string name="title_activity_to_do_list">to_do_list</string>
-    <string name="textview">TextView</string>
+    <string name="app_name">Sample Home Screen</string>
+    <string name="title_activity_calendar_drawer">CalendarDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
