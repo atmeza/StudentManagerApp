@@ -30,23 +30,38 @@ public class TaskItemView extends LinearLayout {
 
     private TaskItem task;
 
-    public TaskItemView(Context context, TaskItem task)
+    public TaskItemView(Context context)
     {
         super(context);
+    }
+
+    public TaskItemView(Context context, AttributeSet attrs)
+    {
+        super(context, attrs);
+    }
+
+    public TaskItemView(Context context, AttributeSet attrs, int defStyle)
+    {
+        super(context, attrs, defStyle);
+    }
+
+    public TaskItemView(Context context, TaskItem task)
+    {
+        this(context);
         this.task = task;
         initializeViews(context);
     }
 
     public TaskItemView(Context context, AttributeSet attrs, TaskItem task)
     {
-        super(context, attrs);
+        this(context, attrs);
         this.task = task;
         initializeViews(context);
     }
 
     public TaskItemView(Context context, AttributeSet attrs, int defStyle, TaskItem task)
     {
-        super(context, attrs, defStyle);
+        this(context, attrs, defStyle);
         this.task = task;
         initializeViews(context);
     }
