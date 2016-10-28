@@ -10,8 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.des.studentmanagerredux.db.TaskItem;
+
 /*
-TODO: Add functions for manipulating the constituent controls at runtime
+TODO: Document functionality
 */
 
 /**
@@ -26,54 +28,27 @@ public class TaskItemView extends LinearLayout {
     private Button mDeleteButton;
     private ProgressBar mProgress;
 
-    public TaskItemView(Context context) {
+    private TaskItem task;
+
+    public TaskItemView(Context context, TaskItem task)
+    {
         super(context);
+        this.task = task;
         initializeViews(context);
-        mDeleteButton = (Button) this
-                .findViewById(R.id.task_item_view_delete);
-        mDeleteButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(view != null)
-                {
-                    ((ViewGroup)view.getParent().getParent().getParent()).removeView((View)(view.getParent()).getParent());
-                }
-            }
-        });
     }
 
-    public TaskItemView(Context context, AttributeSet attrs) {
+    public TaskItemView(Context context, AttributeSet attrs, TaskItem task)
+    {
         super(context, attrs);
+        this.task = task;
         initializeViews(context);
-        mDeleteButton = (Button) this
-                .findViewById(R.id.task_item_view_delete);
-        mDeleteButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(view != null)
-                {
-                    ((ViewGroup)view.getParent().getParent().getParent()).removeView((View)(view.getParent()).getParent());
-                }
-            }
-        });
     }
 
-    public TaskItemView(Context context,
-                       AttributeSet attrs,
-                       int defStyle) {
+    public TaskItemView(Context context, AttributeSet attrs, int defStyle, TaskItem task)
+    {
         super(context, attrs, defStyle);
+        this.task = task;
         initializeViews(context);
-        mDeleteButton = (Button) this
-                .findViewById(R.id.task_item_view_delete);
-        mDeleteButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(view != null)
-                {
-                    ((ViewGroup)view.getParent().getParent().getParent()).removeView((View)(view.getParent()).getParent());
-                }
-            }
-        });
     }
 
     /**
@@ -87,6 +62,44 @@ public class TaskItemView extends LinearLayout {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.setOrientation(LinearLayout.VERTICAL);
         inflater.inflate(R.layout.task_item_view, this);
+
+        mProgress = (ProgressBar) this
+                .findViewById(R.id.task_item_view_progress);
+
+        mTitle = (TextView) this
+                .findViewById(R.id.task_item_view_title);
+
+        mDeleteButton = (Button) this
+                .findViewById(R.id.task_item_view_delete);
+        mDeleteButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view != null)
+                {
+                    ((ViewGroup)view.getParent().getParent().getParent()).removeView((View)(view.getParent()).getParent());
+                }
+            }
+        });
+
+        updateTaskView();
+    }
+
+    public void updateTaskView()
+    {
+        mTitle.setText(task.getTitle());
+        mProgress.setMax(TaskItem.PROGRESS_MAX);
+        mProgress.setProgress(task.getProgress());
+    }
+
+    public void setTask(TaskItem task)
+    {
+        this.task = task;
+        updateTaskView();
+    }
+
+    public TaskItem getTask()
+    {
+        return task;
     }
 
     @Override
