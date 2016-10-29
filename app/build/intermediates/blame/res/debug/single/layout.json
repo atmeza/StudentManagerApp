@@ -80,6 +80,10 @@
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/select_dialog_item_material.xml"
     },
     {
+        "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/layout/task_item_view.xml",
+        "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/res/layout/task_item_view.xml"
+    },
+    {
         "merged": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
         "source": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/layout/abc_popup_menu_header_item_layout.xml"
     },

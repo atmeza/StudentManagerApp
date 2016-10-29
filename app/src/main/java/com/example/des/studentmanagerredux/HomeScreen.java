@@ -21,7 +21,7 @@ public class HomeScreen extends AppCompatActivity {
 
     public void sendMessageCalendar(View view)
     {
-        Intent intent = new Intent(this, Calendar.class);
+        Intent intent = new Intent(this, Calendar_Page.class);
         startActivity(intent);
     }
 }
