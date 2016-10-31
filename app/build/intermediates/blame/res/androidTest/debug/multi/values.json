@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Nikhil\\Desktop\\Student_Manager_Redux\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "C:\\Users\\Nikhil\\Desktop\\Student_Manager_Redux\\app\\build\\intermediates\\exploded-aar\\com.android.support.test\\rules\\0.5\\res\\values\\values.xml",
+                    "file": "/Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
