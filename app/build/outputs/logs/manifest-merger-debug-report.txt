@@ -61,10 +61,10 @@ ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main
 		ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:22:13-56
 	android:name
 		ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:20:13-78
-activity#com.example.des.studentmanagerredux.Calendar
-ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:23:9-90
+activity#com.example.des.studentmanagerredux.Calendar_Page
+ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:23:9-95
 	android:name
-		ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:23:19-78
+		ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:23:19-83
 activity#com.example.des.studentmanagerredux.ToDoList
 ADDED from /Users/TygerYang/Documents/ProjectCSE110/Student_Manager/app/src/main/AndroidManifest.xml:24:9-90
 	android:name
