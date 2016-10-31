@@ -20,7 +20,7 @@
             android:name="com.example.des.studentmanagerredux.CalendarDrawer"
             android:label="@string/title_activity_calendar_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.des.studentmanagerredux.Calendar"></activity>
+        <activity android:name="com.example.des.studentmanagerredux.Calendar_Page"></activity>
         <activity android:name="com.example.des.studentmanagerredux.ToDoList"></activity>
     </application>
 
