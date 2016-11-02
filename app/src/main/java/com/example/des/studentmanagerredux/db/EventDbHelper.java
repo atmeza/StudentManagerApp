@@ -154,7 +154,7 @@ public class EventDbHelper extends SQLiteOpenHelper {
                 KEY_START_DATE + " = " + task.getStart().getTimeInMillis() + " AND " +
                 KEY_END_DATE + " = " + task.getEnd().getTimeInMillis() + " AND " +
                 KEY_PROGRESS + " = " + task.getProgress() + " AND " +
-                KEY_COMPLETE + " = " + String.valueOf(task.isComplete()) + ";");
+                KEY_COMPLETE + " = \"" + String.valueOf(task.isComplete()) + "\";");
 
     }
 }

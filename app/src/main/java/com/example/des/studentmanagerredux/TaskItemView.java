@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.des.studentmanagerredux.db.TaskItem;
+import com.example.des.studentmanagerredux.TaskItem;
 
 /*
 TODO: Document functionality
