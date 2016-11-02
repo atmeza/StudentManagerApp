@@ -1,4 +1,4 @@
-package com.example.des.studentmanagerredux.db;
+package com.example.des.studentmanagerredux;
 
 import java.util.Calendar;
 
