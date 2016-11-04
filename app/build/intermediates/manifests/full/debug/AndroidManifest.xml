@@ -21,13 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.des.studentmanagerredux.ToDoSample" />
         <activity
             android:name="com.example.des.studentmanagerredux.CalendarDrawer"
             android:label="@string/title_activity_calendar_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.des.studentmanagerredux.Calendar_Page" />
-        <activity android:name="com.example.des.studentmanagerredux.ToDoList" />
+        <activity
+            android:name="com.example.des.studentmanagerredux.ToDoList"
+            android:label="@string/title_activity_to_do_list"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
