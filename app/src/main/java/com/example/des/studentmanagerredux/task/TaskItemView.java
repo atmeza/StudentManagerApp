@@ -1,4 +1,4 @@
-package com.example.des.studentmanagerredux;
+package com.example.des.studentmanagerredux.task;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.SeekBar;
 
-import com.example.des.studentmanagerredux.TaskItem;
+import com.example.des.studentmanagerredux.R;
 
 /*
 TODO: Document functionality
@@ -24,9 +24,9 @@ TODO: Document functionality
 
 public class TaskItemView extends LinearLayout {
 
-    private TextView mTitle;
+    private CheckedTextView mTitle;
     private Button mDeleteButton;
-    private ProgressBar mProgress;
+    private SeekBar mProgress;
 
     private TaskItem task;
 
@@ -78,10 +78,10 @@ public class TaskItemView extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
         inflater.inflate(R.layout.task_item_view, this);
 
-        mProgress = (ProgressBar) this
+        mProgress = (SeekBar) this
                 .findViewById(R.id.task_item_view_progress);
 
-        mTitle = (TextView) this
+        mTitle = (CheckedTextView) this
                 .findViewById(R.id.task_item_view_title);
 
         mDeleteButton = (Button) this
@@ -121,6 +121,7 @@ public class TaskItemView extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
     }
+
     /**
      * Use the below code to add instances of this compound control to a Linear Layout at runtime
      * Can be modified to work with other layout types

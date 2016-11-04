@@ -4,14 +4,17 @@
         android:layout_height="wrap_content" android:weightSum="10"
         android:backgroundTintMode="src_over"
         android:background="@android:color/darker_gray">
-        <TextView
+
+        <CheckedTextView
             android:id="@+id/task_item_view_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:text="Some example text"
             android:maxLines="1"
-            android:layout_weight="7" />
+            android:layout_weight="7"
+            android:checkMark="@android:drawable/checkbox_on_background"
+            android:checked="false" />
 
         <Button
             android:id="@+id/task_item_view_delete"
@@ -23,7 +26,7 @@
 
     </LinearLayout>
 
-    <ProgressBar
+    <SeekBar
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="26dp"
