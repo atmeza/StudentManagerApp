@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.des.studentmanagerredux.HomeScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="com.example.des.studentmanagerredux.ToDoSample" />
         <activity
@@ -23,14 +28,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.des.studentmanagerredux.Calendar_Page" />
         <activity android:name="com.example.des.studentmanagerredux.ToDoList" />
-        <activity android:name="com.example.des.samplehomescreen.Login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.example.des.samplehomescreen.Register" />
     </application>
 
 </manifest>
