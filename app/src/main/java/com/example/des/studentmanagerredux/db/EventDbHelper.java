@@ -23,7 +23,7 @@ import com.example.des.studentmanagerredux.task.TaskItem;
 public class EventDbHelper extends SQLiteOpenHelper {
 
     // Database Version (not important to project)
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 7;
 
     // Database Name (name of entire database)
     private static final String DATABASE_NAME = "events";
@@ -50,13 +50,13 @@ public class EventDbHelper extends SQLiteOpenHelper {
     // definition of the table, format of: _id, title, start, end, progress, complete
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String eventTable = "CREATE TABLE " + TABLE_NAME + "( " +
+        String eventTable = "CREATE TABLE " + TABLE_NAME + "(" +
                 KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 KEY_TITLE + " TEXT NOT NULL, " +
-                KEY_START_DATE + "INTEGER NOT NULL, " +
-                KEY_END_DATE  + "INTEGER, " +
-                KEY_PROGRESS + "INTEGER NOT NULL, " +
-                KEY_COMPLETE + "TEXT NOT NULL);";
+                KEY_START_DATE + " INTEGER NOT NULL, " +
+                KEY_END_DATE  + " INTEGER, " +
+                KEY_PROGRESS + " INTEGER NOT NULL, " +
+                KEY_COMPLETE + " TEXT NOT NULL);";
 
         db.execSQL(eventTable); // table is created
     }
@@ -95,7 +95,7 @@ public class EventDbHelper extends SQLiteOpenHelper {
     // Takes in a Calendar object and returns an ArrayList of all TaskItems in the database that
     // have a start time within a day of it, sorted by start time
     // (make calendar time = 0:00 for all events exactly on that date)
-    public List<TaskItem> getEventsOnDay(Calendar cal) {
+    public Cursor getEventsOnDay(Calendar cal) {
 
         // ArrayList of TaskItems that will be returned
         ArrayList<TaskItem> events = new ArrayList<TaskItem>();
@@ -112,6 +112,8 @@ public class EventDbHelper extends SQLiteOpenHelper {
 
         // loop through all of the results of the above query
         Cursor cursor = db.rawQuery(selectQuery, null);
+        return cursor;
+        /*
         if (cursor.moveToFirst()) {
 
             // for each result
@@ -142,7 +144,7 @@ public class EventDbHelper extends SQLiteOpenHelper {
         }
 
         return events; // return the list of events
-
+*/
     }
 
     /*
