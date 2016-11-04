@@ -1,116 +1,61 @@
 package com.example.des.studentmanagerredux;
 
-import android.content.ContentValues;
-import android.content.DialogInterface;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.des.studentmanagerredux.db.TaskContract;
-import com.example.des.studentmanagerredux.db.TaskDbHelper;
+import com.example.des.studentmanagerredux.db.EventDbHelper;
+import com.example.des.studentmanagerredux.task.TaskAdapter;
+import com.example.des.studentmanagerredux.task.TaskItem;
 
-import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class ToDoList extends AppCompatActivity {
-    //private static final String TAG = "ToDoList";
-    private TaskDbHelper mHelper;
+    private EventDbHelper dbHelper;
     private ListView mTaskListView;
-    private ArrayAdapter<String> mAdapter;
+    private TaskAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.todo_list_main);
+        dbHelper = new EventDbHelper(this);
 
-        mHelper = new TaskDbHelper(this);
-        mTaskListView = (ListView) findViewById(R.id.list_todo);
-        updateUI();
+        setContentView(R.layout.activity_to_do_list);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mTaskListView = (ListView) this
+                .findViewById(R.id.list_todo);
+
+        new Handler().post(new Runnable() {
+
+            @Override
+            public void run() {
+                mAdapter = new TaskAdapter(ToDoList.this, dbHelper.getAllEvents(), 0);
+                mTaskListView.setAdapter(mAdapter);
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Add action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                //Eventually will have a modal window here to input task info and create user-specified task
+                TaskItem taskItem = new TaskItem(new GregorianCalendar(5, 5, 5), "Example");
+                dbHelper.addEvent(taskItem);
+                mTaskListView.setAdapter(mAdapter);
+            }
+        });
     }
 
-    private void updateUI() {
-        ArrayList<String> taskList = new ArrayList<>();
-        SQLiteDatabase db = mHelper.getReadableDatabase();
-        Cursor cursor = db.query(TaskContract.TaskEntry.TABLE,
-                new String[]{TaskContract.TaskEntry._ID, TaskContract.TaskEntry.COL_TASK_TITLE},
-                null, null, null, null, null);
-        while (cursor.moveToNext()) {
-            int idx = cursor.getColumnIndex(TaskContract.TaskEntry.COL_TASK_TITLE);
-            taskList.add(cursor.getString(idx));
-        }
-
-        if (mAdapter == null) {
-            mAdapter = new ArrayAdapter<>(this,
-                    R.layout.item_todo,
-                    R.id.task_title,
-                    taskList);
-            mTaskListView.setAdapter(mAdapter);
-        } else {
-            mAdapter.clear();
-            mAdapter.addAll(taskList);
-            mAdapter.notifyDataSetChanged();
-        }
-        cursor.close();
-        db.close();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_add_task:
-                final EditText taskEditText = new EditText(this);
-                AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("Add a new task")
-                        .setMessage("What do you want to do next?")
-                        .setView(taskEditText)
-                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String task = String.valueOf(taskEditText.getText());
-                                SQLiteDatabase db = mHelper.getWritableDatabase();
-                                ContentValues values = new ContentValues();
-                                values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
-                                db.insertWithOnConflict(TaskContract.TaskEntry.TABLE,
-                                        null,
-                                        values,
-                                        SQLiteDatabase.CONFLICT_REPLACE);
-                                db.close();
-                                updateUI();
-                            }
-                        })
-                        .setNegativeButton("Cancel", null)
-                        .create();
-                dialog.show();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public void deleteTask(View view) {
-        View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
-        String task = String.valueOf(taskTextView.getText());
-        SQLiteDatabase db = mHelper.getWritableDatabase();
-        db.delete(TaskContract.TaskEntry.TABLE,
-                TaskContract.TaskEntry.COL_TASK_TITLE + " = ?",
-                new String[]{task});
-        db.close();
-        updateUI();
-    }
 }
