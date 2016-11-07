@@ -28,9 +28,6 @@ public class ToDoList extends AppCompatActivity {
 
         setContentView(R.layout.activity_to_do_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
         mTaskListView = (ListView) this
                 .findViewById(R.id.list_todo);
 
@@ -47,13 +44,14 @@ public class ToDoList extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Add action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
                 //Eventually will have a modal window here to input task info and create user-specified task
-                TaskItem taskItem = new TaskItem(new GregorianCalendar(5, 5, 5), "Example");
+                //This is where Nikhil can put his dialogalert code
+                TaskItem taskItem = new TaskItem(new GregorianCalendar(), "Example");
+                taskItem.getStart().setTimeInMillis(500);
+                taskItem.getEnd().setTimeInMillis(500);
                 dbHelper.addEvent(taskItem);
-                //mAdapter.
+                mAdapter = new TaskAdapter(ToDoList.this, dbHelper.getAllEvents(),0);
+                mTaskListView.setAdapter(mAdapter);
             }
         });
     }

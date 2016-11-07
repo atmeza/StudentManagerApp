@@ -2,6 +2,7 @@ package com.example.des.studentmanagerredux.task;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,9 +75,32 @@ public class TaskItemView extends LinearLayout {
             public void onClick(View view) {
                 if(view != null)
                 {
+                    Log.d("Onclick", "Delete button clicked: " + task.getTitle());
                     EventDbHelper dbHelper = new EventDbHelper(view.getContext());
                     dbHelper.removeEvent(task);
                 }
+            }
+        });
+        mProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                task.setProgress(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        mTitle.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Nikhil can use the dialog alert here
             }
         });
     }
