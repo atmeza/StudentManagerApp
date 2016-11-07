@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 
 import com.example.des.studentmanagerredux.R;
+import com.example.des.studentmanagerredux.db.EventDbHelper;
 
 /*
 TODO: Document functionality
@@ -33,36 +34,18 @@ public class TaskItemView extends LinearLayout {
     public TaskItemView(Context context)
     {
         super(context);
+        initializeViews(context);
     }
 
     public TaskItemView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
+        initializeViews(context);
     }
 
     public TaskItemView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
-    }
-
-    public TaskItemView(Context context, TaskItem task)
-    {
-        this(context);
-        this.task = task;
-        initializeViews(context);
-    }
-
-    public TaskItemView(Context context, AttributeSet attrs, TaskItem task)
-    {
-        this(context, attrs);
-        this.task = task;
-        initializeViews(context);
-    }
-
-    public TaskItemView(Context context, AttributeSet attrs, int defStyle, TaskItem task)
-    {
-        this(context, attrs, defStyle);
-        this.task = task;
         initializeViews(context);
     }
 
@@ -91,12 +74,11 @@ public class TaskItemView extends LinearLayout {
             public void onClick(View view) {
                 if(view != null)
                 {
-                    ((ViewGroup)view.getParent().getParent().getParent()).removeView((View)(view.getParent()).getParent());
+                    EventDbHelper dbHelper = new EventDbHelper(view.getContext());
+                    dbHelper.removeEvent(task);
                 }
             }
         });
-
-        updateTaskView();
     }
 
     public void updateTaskView()
