@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.des.studentmanagerredux.HomeScreen;
 import com.example.des.studentmanagerredux.R;
 
 
@@ -42,15 +43,20 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.bLogin:
+            //case R.id.bLogin:
 
 
 
 
-                break;
+               // break;
             case R.id.tvRegisterLink:
-                Intent intent= new Intent(this, Register.class);
-                startActivity(intent);
+                Intent intenta= new Intent(this, Register.class);
+                startActivity(intenta);
+                // startActivity(new Intent(this, Register.class));
+                break;
+            case R.id.bLogin:
+                Intent intentb= new Intent(this, HomeScreen.class);
+                startActivity(intentb);
                 // startActivity(new Intent(this, Register.class));
                 break;
         }
