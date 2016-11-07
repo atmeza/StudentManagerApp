@@ -2,6 +2,7 @@ package com.example.des.studentmanagerredux;
 
 //Created by Tyger 10-30-16
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CalendarView;
@@ -29,7 +30,20 @@ public class Calendar_Page extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                Toast.makeText(getApplicationContext(), ""+dayOfMonth, Toast.LENGTH_SHORT).show();
+
+
+                List_Fragment list_fragment = (List_Fragment)getSupportFragmentManager().findFragmentByTag("List_Fragment");
+
+                if(list_fragment==null){
+                    list_fragment = new List_Fragment();
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.add(android.R.id.content, list_fragment, "List_Fragment");
+                    transaction.commit();
+                }
+
+
+
+
             }
         });
     }
