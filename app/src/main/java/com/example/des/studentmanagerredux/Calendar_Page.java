@@ -2,6 +2,8 @@ package com.example.des.studentmanagerredux;
 
 //Created by Tyger 10-30-16
 
+import android.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,32 +36,6 @@ public class Calendar_Page extends AppCompatActivity {
         CalendarView calendarView=(CalendarView) findViewById(R.id.calendarView);
 
 
-        // The following is in attempt to make a pop up interface
-        button = (Button) findViewById(R.id.add_event);
-        button.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                // create a Dialog component
-                final Dialog dialog = new Dialog(context);
-
-                //tell the Dialog to use the dialog.xml as it's layout description
-                dialog.setContentView(R.layout.create_event_page_fragment);
-                dialog.setTitle("Create Event");
-
-                Button dialogButton = (Button) dialog.findViewById(R.id.add_event);
-
-                dialogButton.setOnClickListener(new OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
-            }
-        });
 
 
             // The below function allows us to listen to when a new date has been clicked
@@ -87,9 +63,7 @@ public class Calendar_Page extends AppCompatActivity {
         });
     }
 
-    void createEvent() {
 
-    }
 
 
 }

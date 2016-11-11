@@ -29,7 +29,7 @@ public class ToDoList extends AppCompatActivity {
         setContentView(R.layout.activity_to_do_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         mTaskListView = (ListView) this
                 .findViewById(R.id.list_todo);
@@ -53,7 +53,7 @@ public class ToDoList extends AppCompatActivity {
                 //Eventually will have a modal window here to input task info and create user-specified task
                 TaskItem taskItem = new TaskItem(new GregorianCalendar(5, 5, 5), "Example");
                 dbHelper.addEvent(taskItem);
-                mTaskListView.setAdapter(mAdapter);
+                //mAdapter.
             }
         });
     }
