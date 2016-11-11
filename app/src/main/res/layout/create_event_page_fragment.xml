@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.des.studentmanagerredux.CreateEventPage"
+    android:background="@color/redish1">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/input_event_name"
+            android:id="@+id/eventNameInputTitle"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventNameInputBox"/>
+
+        <TextView
+            android:text="@string/input_event_date_mm_dd_yyyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventDateTextInputTitle"
+            android:layout_weight="0.16" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventDateTextInputBox"/>
+
+        <TextView
+            android:text="@string/input_event_info"
+            android:layout_height="42dp"
+            android:layout_width="match_parent"
+            android:id="@+id/eventInfoInputTitle" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="188dp"
+            android:id="@+id/editEventIndoInputBox"
+            android:layout_weight="0.91" />
+
+        <Button
+            android:text="Create Event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CreateEventButton" />
+
+        <Button
+            android:text="Cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancelCreateEvent" />
+
+</LinearLayout>

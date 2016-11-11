@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.des.studentmanagerredux.List_Fragment">
+
+
+    <ListView
+
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="191dp"
+        android:layout_weight="0.48"
+        android:background="@color/lightbluishgrey">
+
+
+    </ListView>
+
+    <Button
+        android:text="Add Event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendarView"
+        android:id="@+id/add_event"
+        android:layout_weight="0.09"
+        android:backgroundTint="@color/lightpink1"/>
+
+    <Button
+        android:text="Close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_event"
+        android:id="@+id/closeEventList"
+        android:layout_weight="0.12"
+        android:backgroundTint="@color/lightpink1" />
+</LinearLayout>

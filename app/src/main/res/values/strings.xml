@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sample Home Screen</string>
+    <string name="title_activity_calendar_drawer">CalendarDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_to_do_list">ToDoList</string>
+    <string name="add_event">add_event</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_event_date_mm_dd_yyyy">Input Event Date: mm/dd/yyyy</string>
+    <string name="input_event_info">Input Event Info:</string>
+    <string name="input_event_name">Input Event Name:</string>
+</resources>
