@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/calendarView"
         android:id="@+id/add_event"
-        android:onClick="createEvent"
         android:layout_weight="0.09"
         android:backgroundTint="@color/lightpink1" />
 </LinearLayout>
