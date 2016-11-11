@@ -36,9 +36,7 @@ public class Calendar_Page extends AppCompatActivity {
         CalendarView calendarView=(CalendarView) findViewById(R.id.calendarView);
 
 
-
-
-            // The below function allows us to listen to when a new date has been clicked
+        // The below function allows us to listen to when a new date has been clicked
         // on the calendar view
         calendarView.setOnDateChangeListener(new OnDateChangeListener() {
 
@@ -62,8 +60,4 @@ public class Calendar_Page extends AppCompatActivity {
             }
         });
     }
-
-
-
-
 }
