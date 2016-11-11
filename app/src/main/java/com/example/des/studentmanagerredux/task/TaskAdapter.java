@@ -5,6 +5,7 @@ import android.database.Cursor;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -36,13 +37,13 @@ public class TaskAdapter extends CursorAdapter {
 
         if(view instanceof TaskItemView)
         {
-            Calendar taskStart = new GregorianCalendar(cursor.getInt(2), 0, 0);
-            Calendar taskEnd = new GregorianCalendar(cursor.getInt(3), 0, 0);
-            int progress = cursor.getInt(4);
-            boolean complete = Boolean.parseBoolean(cursor.getString(5));
+            Calendar taskStart = new GregorianCalendar();
+            taskStart.setTimeInMillis(cursor.getLong(2));
+            Calendar taskEnd = new GregorianCalendar();
+            taskEnd.setTimeInMillis(cursor.getLong(3));
             String title = cursor.getString(1);
 
-            TaskItem newTask = new TaskItem(taskStart, taskEnd, progress, complete, title);
+            TaskItem newTask = new TaskItem(taskStart, taskEnd, title);
             ((TaskItemView) view).setTask(newTask);
         }
         else
