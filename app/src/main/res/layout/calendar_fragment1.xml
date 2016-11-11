@@ -6,9 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.des.studentmanagerredux.List_Fragment">
 
-
     <ListView
-
         android:id="@+id/android:list"
         android:layout_width="match_parent"
         android:layout_height="191dp"
