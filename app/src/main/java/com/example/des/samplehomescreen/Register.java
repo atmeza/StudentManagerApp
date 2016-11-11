@@ -2,6 +2,7 @@ package com.example.des.samplehomescreen;
 
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,11 +43,16 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //case R.id.bRegister:
+
+
+
+
+                //break;
             case R.id.bRegister:
-
-
-
-
+                Intent intent= new Intent(this, Login.class);
+                startActivity(intent);
+                // startActivity(new Intent(this, Register.class));
                 break;
         }
     }
