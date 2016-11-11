@@ -15,6 +15,7 @@
             android:label="@string/title_activity_calendar_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.des.studentmanagerredux.Calendar_Page"></activity>
+        <activity android:name="com.example.des.studentmanagerredux.GPACalculator"></activity>
         <activity android:name="com.example.des.studentmanagerredux.ToDoList"></activity>
         <activity android:name="com.example.des.samplehomescreen.Login"><intent-filter>
             <action android:name="android.intent.action.MAIN" />

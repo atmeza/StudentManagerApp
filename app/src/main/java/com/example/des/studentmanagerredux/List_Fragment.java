@@ -1,8 +1,9 @@
 package com.example.des.studentmanagerredux;
 
-import android.app.Fragment;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -39,6 +40,17 @@ public class List_Fragment extends ListFragment {
 
 
 
+    }
+    void createEvent() {
+        /*Fragment create_event_page = getFragmentManager().findFragmentByTag("create_event_fragment_calendar");
+
+        if(create_event_page==null) {
+            create_event_page  = new Fragment();
+
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            transaction.add(android.R.id.content, create_event_page, "create_event_calendar_fragment");
+            transaction.commit();
+        }*///UNCOMMENT LATER
     }
 
 

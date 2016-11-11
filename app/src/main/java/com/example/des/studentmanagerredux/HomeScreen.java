@@ -24,4 +24,10 @@ public class HomeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, Calendar_Page.class);
         startActivity(intent);
     }
+
+    public void sendMessageGPACalculator(View view)
+    {
+        Intent intent = new Intent(this, GPACalculator.class);
+        startActivity(intent);
+    }
 }

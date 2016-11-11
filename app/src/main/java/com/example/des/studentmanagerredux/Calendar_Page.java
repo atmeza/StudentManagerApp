@@ -36,24 +36,6 @@ public class Calendar_Page extends AppCompatActivity {
         CalendarView calendarView=(CalendarView) findViewById(R.id.calendarView);
 
 
-        // The following is in attempt to make a pop up interface
-       /* button = (Button) findViewById(R.id.add_event);
-        button.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-
-                android.support.v4.app.Fragment create_event_page = getSupportFragmentManager().findFragmentByTag("CreateEventPage");
-
-                if(create_event_page==null) {
-                    create_event_page= new android.support.v4.app.Fragment();
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.add(android.R.id.content, create_event_page, "CreateEventPage");
-                    transaction.commit();
-
-                }
-            }
-        }); */
 
 
             // The below function allows us to listen to when a new date has been clicked
@@ -81,16 +63,7 @@ public class Calendar_Page extends AppCompatActivity {
         });
     }
 
-    void createEvent() {
-        android.support.v4.app.Fragment create_event_page = getSupportFragmentManager().findFragmentByTag("CreateEventPage");
 
-        if(create_event_page==null) {
-            create_event_page = new android.support.v4.app.Fragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.add(android.R.id.content, create_event_page, "CreateEventPage");
-            transaction.commit();
-        }
-    }
 
 
 }
