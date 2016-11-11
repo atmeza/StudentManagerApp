@@ -3,9 +3,7 @@ package com.example.des.studentmanagerredux;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 
@@ -13,10 +11,9 @@ import com.example.des.studentmanagerredux.db.EventDbHelper;
 import com.example.des.studentmanagerredux.task.TaskAdapter;
 import com.example.des.studentmanagerredux.task.TaskItem;
 
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
+import java.util.Calendar;
 
-public class ToDoList extends AppCompatActivity {
+public class Planner extends AppCompatActivity {
     private EventDbHelper dbHelper;
     private ListView mTaskListView;
     private TaskAdapter mAdapter;
@@ -26,10 +23,7 @@ public class ToDoList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         dbHelper = new EventDbHelper(this);
 
-        setContentView(R.layout.activity_to_do_list);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_planner);
 
         mTaskListView = (ListView) this
                 .findViewById(R.id.list_todo);
@@ -38,7 +32,7 @@ public class ToDoList extends AppCompatActivity {
 
             @Override
             public void run() {
-                mAdapter = new TaskAdapter(ToDoList.this, dbHelper.getAllEvents(), 0);
+                mAdapter = new TaskAdapter(Planner.this, dbHelper.getAllEvents(), 0);
                 mTaskListView.setAdapter(mAdapter);
             }
         });
@@ -47,13 +41,12 @@ public class ToDoList extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Add action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
                 //Eventually will have a modal window here to input task info and create user-specified task
-                TaskItem taskItem = new TaskItem(new GregorianCalendar(5, 5, 5), "Example");
+                //This is where Nikhil can put his dialogalert code
+                TaskItem taskItem = new TaskItem(Calendar.getInstance(), "Example");
                 dbHelper.addEvent(taskItem);
-                //mAdapter.
+                mAdapter = new TaskAdapter(Planner.this, dbHelper.getAllEvents(),0);
+                mTaskListView.setAdapter(mAdapter);
             }
         });
     }

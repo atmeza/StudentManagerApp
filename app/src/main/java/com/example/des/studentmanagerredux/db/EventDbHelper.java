@@ -15,6 +15,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import java.util.Calendar;
 import java.util.*;
 
@@ -23,7 +25,7 @@ import com.example.des.studentmanagerredux.task.TaskItem;
 public class EventDbHelper extends SQLiteOpenHelper {
 
     // Database Version (not important to project)
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 13;
 
     // Database Name (name of entire database)
     private static final String DATABASE_NAME = "events";
@@ -39,8 +41,6 @@ public class EventDbHelper extends SQLiteOpenHelper {
     private static final String KEY_TITLE = "title"; // name of event (string)
     private static final String KEY_START_DATE = "start"; // start date (milliseconds stored as int)
     private static final String KEY_END_DATE = "end"; // end date (milliseconds stored as int)
-    private static final String KEY_PROGRESS = "progress"; // event progress (int)
-    private static final String KEY_COMPLETE = "complete"; // is event complete (either "true" or "false")
 
     // Constructor for the Database helper, utilizes constants defined above to function
     public EventDbHelper(Context context) {
@@ -54,10 +54,7 @@ public class EventDbHelper extends SQLiteOpenHelper {
                 KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 KEY_TITLE + " TEXT NOT NULL, " +
                 KEY_START_DATE + " INTEGER NOT NULL, " +
-                KEY_END_DATE  + " INTEGER, " +
-                KEY_PROGRESS + " INTEGER NOT NULL, " +
-                KEY_COMPLETE + " TEXT NOT NULL);";
-
+                KEY_END_DATE + " INTEGER NOT NULL);";
         db.execSQL(eventTable); // table is created
     }
 
@@ -79,13 +76,6 @@ public class EventDbHelper extends SQLiteOpenHelper {
         values.put(KEY_TITLE, task.getTitle()); // get title
         values.put(KEY_START_DATE, task.getStart().getTimeInMillis()); // get start in milliseconds
         values.put(KEY_END_DATE, task.getEnd().getTimeInMillis()); //get end in miliseconds
-        values.put(KEY_PROGRESS, task.getProgress()); // get progress
-
-        // if task is complete, ues "true", else use false
-        if (task.isComplete()) {
-            values.put(KEY_COMPLETE, "true");
-        }
-        else values.put(KEY_COMPLETE, "false");
 
         // insert the tuple into the table
         db.insert(TABLE_NAME, null, values);
@@ -173,9 +163,7 @@ public class EventDbHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " +
                 KEY_TITLE + " = \"" + task.getTitle() + "\" AND " +
                 KEY_START_DATE + " = " + task.getStart().getTimeInMillis() + " AND " +
-                KEY_END_DATE + " = " + task.getEnd().getTimeInMillis() + " AND " +
-                KEY_PROGRESS + " = " + task.getProgress() + " AND " +
-                KEY_COMPLETE + " = \"" + String.valueOf(task.isComplete()) + "\";");
+                KEY_END_DATE + " = " + task.getEnd().getTimeInMillis() + ";");
 
     }
 }
