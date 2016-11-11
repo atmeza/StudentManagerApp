@@ -15,7 +15,7 @@ public class HomeScreen extends AppCompatActivity {
 
     public void sendMessageToDo(View view)
     {
-        Intent intent = new Intent(this, ToDoList.class);
+        Intent intent = new Intent(this, Planner.class);
         startActivity(intent);
     }
 
