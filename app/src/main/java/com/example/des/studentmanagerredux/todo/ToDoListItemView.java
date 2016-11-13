@@ -75,9 +75,6 @@ public class ToDoListItemView extends LinearLayout {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ToDoDbHelper dbHelper = new ToDoDbHelper(seekBar.getContext());
                 dbHelper.updateProgress(item, progress);
-                // not sure if the next two lines are neccessary
-                //item.setProgress(progress);
-                //mProgress.setProgress(progress);
             }
 
             @Override

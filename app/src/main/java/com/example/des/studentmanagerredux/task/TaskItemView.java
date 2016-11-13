@@ -2,7 +2,6 @@ package com.example.des.studentmanagerredux.task;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +9,9 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.TextView;
 
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
 /*
 TODO: Document functionality
@@ -30,9 +25,9 @@ TODO: Document functionality
 
 public class TaskItemView extends LinearLayout {
 
-    private TextView mTitle;
-    private TextView mTime;
+    private CheckedTextView mTitle;
     private Button mDeleteButton;
+    private SeekBar mProgress;
 
     private TaskItem task;
 
@@ -55,7 +50,7 @@ public class TaskItemView extends LinearLayout {
     }
 
     /**
-     * Inflates the views in the layout and hooks up event handlers.
+     * Inflates the views in the layout.
      *
      * @param context
      *           the current context for the view.
@@ -66,15 +61,14 @@ public class TaskItemView extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
         inflater.inflate(R.layout.task_item_view, this);
 
-        mTitle = (TextView) this
-                .findViewById(R.id.task_item_view_title);
+        mProgress = (SeekBar) this
+                .findViewById(R.id.task_item_view_progress);
 
-        mTime = (TextView) this
-                .findViewById(R.id.task_item_view_time);
+        mTitle = (CheckedTextView) this
+                .findViewById(R.id.task_item_view_title);
 
         mDeleteButton = (Button) this
                 .findViewById(R.id.task_item_view_delete);
-
         mDeleteButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,20 +79,13 @@ public class TaskItemView extends LinearLayout {
                 }
             }
         });
-
-        mTitle.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Dialog open code here
-            }
-        });
     }
 
     public void updateTaskView()
     {
         mTitle.setText(task.getTitle());
-        DateFormat df = new SimpleDateFormat("HH:mm");
-        mTime.setText(df.format(task.getStart().getTime()) + " - " + df.format(task.getEnd().getTime()));
+        mProgress.setMax(TaskItem.PROGRESS_MAX);
+        mProgress.setProgress(task.getProgress());
     }
 
     public void setTask(TaskItem task)
@@ -116,4 +103,17 @@ public class TaskItemView extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
     }
+
+    /**
+     * Use the below code to add instances of this compound control to a Linear Layout at runtime
+     * Can be modified to work with other layout types
+     *
+
+            TaskItemView newTask = new TaskItemView(context);
+            LinearLayout.LayoutParams params = new
+                    LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            ((LinearLayout)(findViewById(R.id.content_main))).addView(newTask, params);
+
+    */
 }
