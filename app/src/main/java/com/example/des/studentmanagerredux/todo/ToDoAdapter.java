@@ -6,21 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 
+import com.example.des.studentmanagerredux.ToDoList;
+
 /**
  * Created by Nikhil on 11/11/2016.
  */
 
 public class ToDoAdapter extends CursorAdapter {
 
-    public ToDoAdapter(Context context, Cursor c, int flags)
+    private ToDoList list;
+
+    public ToDoAdapter(ToDoList context, Cursor c, int flags)
     {
         super(context, c, flags);
+        list = context;
     }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent)
     {
-        ToDoListItemView newTaskView = new ToDoListItemView(context);
+        ToDoListItemView newTaskView = new ToDoListItemView(context, list);
         return newTaskView;
     }
 

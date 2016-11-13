@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.des.studentmanagerredux.ToDoList;
 import com.example.des.studentmanagerredux.db.ToDoDbHelper;
 import com.example.des.studentmanagerredux.R;
 
@@ -36,11 +37,13 @@ public class ToDoListItemView extends LinearLayout {
     private SeekBar mProgress;
 
     private ToDoListItem item;
+    private ToDoList list;
 
-    public ToDoListItemView(Context context)
+    public ToDoListItemView(Context context, ToDoList list)
     {
         super(context);
         initializeViews(context);
+        this.list = list;
     }
 
     public ToDoListItemView(Context context, AttributeSet attrs)
@@ -108,6 +111,7 @@ public class ToDoListItemView extends LinearLayout {
                                     if (!dbHelper.changeEventName(item, newTask)) {
                                         showErrorDialog();
                                     }
+                                    else list.refresh();
                                 }
                             })
                             .setNegativeButton("Cancel", null)
@@ -128,6 +132,7 @@ public class ToDoListItemView extends LinearLayout {
                 {
                     ToDoDbHelper dbHelper = new ToDoDbHelper(view.getContext());
                     dbHelper.removeEvent(item);
+                    list.refresh();
                 }
             }
         });
