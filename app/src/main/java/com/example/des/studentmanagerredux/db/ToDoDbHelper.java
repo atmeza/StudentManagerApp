@@ -121,11 +121,17 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         return false; // if name is already present
     }
 
-    // TODO: SQL Command to update Progress int (not sure if works)
     public void updateProgress(ToDoListItem task, int newProgressValue) {
         SQLiteDatabase db = this.getWritableDatabase(); // get database
         db.execSQL("UPDATE " + TABLE + " SET " +
                 KEY_PROGRESS + " = \"" + newProgressValue + "\" WHERE " +
+                COL_TASK_TITLE + " = \"" + task.getTitle() + "\";");
+    }
+
+    public void updateCheckbox(ToDoListItem task, boolean isChecked) {
+        SQLiteDatabase db = this.getWritableDatabase(); // get database
+        db.execSQL("UPDATE " + TABLE + " SET " +
+                KEY_COMPLETE + " = \"" + isChecked + "\" WHERE " +
                 COL_TASK_TITLE + " = \"" + task.getTitle() + "\";");
     }
 }

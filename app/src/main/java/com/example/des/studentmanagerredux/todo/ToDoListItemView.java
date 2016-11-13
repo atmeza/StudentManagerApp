@@ -10,7 +10,9 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CheckedTextView;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -33,6 +35,7 @@ TODO: Document functionality
 public class ToDoListItemView extends LinearLayout {
 
     private TextView mTitle;
+    private CheckBox mCheck;
     private Button mDeleteButton;
     private SeekBar mProgress;
 
@@ -70,6 +73,19 @@ public class ToDoListItemView extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
         inflater.inflate(R.layout.task_item_view, this);
 
+        mCheck = (CheckBox) this
+                .findViewById(R.id.task_item_checkBox);
+
+        mCheck.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ToDoDbHelper dbHelper = new ToDoDbHelper(buttonView.getContext());
+                dbHelper.updateCheckbox(item, isChecked);
+                item.markComplete(isChecked);
+                //list.refresh(); // updates progress bar as well
+            }
+        });
+
         mProgress = (SeekBar) this
                 .findViewById(R.id.task_item_view_progress);
 
@@ -90,7 +106,7 @@ public class ToDoListItemView extends LinearLayout {
             }
         });
 
-        mTitle = (CheckedTextView) this
+        mTitle = (TextView) this
                 .findViewById(R.id.task_item_view_title);
 
         // Changes name by selecting on task text
@@ -100,6 +116,7 @@ public class ToDoListItemView extends LinearLayout {
                 if (view != null)
                 {
                     final EditText taskEditText = new EditText(view.getContext());
+                    taskEditText.setText(item.getTitle());
                     final ToDoDbHelper dbHelper = new ToDoDbHelper(view.getContext());
                     AlertDialog dialog = new AlertDialog.Builder(view.getContext()) // Dialog for new name
                             .setTitle("Edit Task Name")
@@ -140,6 +157,7 @@ public class ToDoListItemView extends LinearLayout {
 
     public void updateTaskView()
     {
+        mCheck.setChecked(item.isComplete());
         mTitle.setText(item.getTitle());
         mProgress.setMax(ToDoListItem.PROGRESS_MAX);
         mProgress.setProgress(item.getProgress());
@@ -162,7 +180,6 @@ public class ToDoListItemView extends LinearLayout {
     }
 
     public void showErrorDialog () {
-        // TODO
         View v = this.mTitle;
         AlertDialog dialog = new AlertDialog.Builder(v.getContext()) // Dialog for new name
                 .setTitle("Error: New Task Name Already Exists")

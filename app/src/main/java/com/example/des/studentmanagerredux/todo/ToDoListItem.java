@@ -50,7 +50,7 @@ public class ToDoListItem {
     public void markComplete(boolean complete)
     {
         this.complete = complete;
-        this.progress = complete ? PROGRESS_MAX : progress;
+        //this.progress = complete ? PROGRESS_MAX : progress;
     }
 
     public void setTitle(String title)
