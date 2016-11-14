@@ -1,5 +1,6 @@
 package com.example.des.studentmanagerredux;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.TableRow;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.example.des.studentmanagerredux.db.GPADbHelper;
 
 
 public class GPACalculator extends AppCompatActivity {
@@ -25,19 +27,110 @@ public class GPACalculator extends AppCompatActivity {
     private List<EditText> editTextListUnits = new ArrayList<EditText>();
     private List<Spinner> spinnerList = new ArrayList<Spinner>();
 
-    //private TaskDbHelper mHelper;
+    private GPADbHelper mHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gpa_calculator);
 
-        //mHelper = new TaskDbHelper(this);
+    }
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+
+        mHelper = new GPADbHelper(this);
+
+        Cursor cursor = mHelper.getAllClasses();
+
+        // parse through database, for each row, create a GPACalculator row that has its parameters
+        // defaulted to the values in the row
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String title = cursor.getString(1);
+            String units = cursor.getString(2);
+            int grade = cursor.getInt(3);
+            addRow(title, units, grade); // new addRow method that sets initial state of row to params
+            cursor.moveToNext();
+        }
+
+        // if there are no events in the database, then make an empty one
+        if (editTextListUnits.size() == 0) {
+            addRow();
+        }
+
+    }
+
+    // onStop method will overwrite existing SQL database with whatever is in the GPACalculator
+    // so that the database is updated before the information on the page is lost
+    @Override
+    protected void onStop() {
+
+        super.onStop();
+
+        // empty current database
+        mHelper = new GPADbHelper(this);
+        mHelper.removeAllClasses();
+
+        // parse through all of the rows of the GPACalculator, creating a database entry for
+        // each row
+        for (int i = 0; i < spinnerList.size(); i++) {
+            String title = editTextListCourse.get(i).getText().toString();
+            String units = editTextListUnits.get(i).getText().toString();
+            int grade = spinnerList.get(i).getSelectedItemPosition();
+            mHelper.addClass(title, units, grade);
+        }
 
 
-        addRow();
+    }
 
+    // new addRow method sets values od new row to params passed in
+    private void addRow(String title, String units, int grade){
+        TableLayout tableLayout  = (TableLayout)findViewById(R.id.mainTable);
+        TableRow tableRow = new TableRow(this);
+        tableRow.setPadding(0, 10, 0, 0);
 
+        // new methods accept a value and set default value to it
+        tableRow.addView(editTextCourseWithValue("0", title));
+        tableRow.addView(editTextUnitsWithValue("0", units));
+        tableRow.addView(spinnerGradeWithValue(grade));
+        tableLayout.addView(tableRow);
+    }
+
+    // makes a new course with a default value
+    private EditText editTextCourseWithValue(String hint, String title) {
+        EditText editText = new EditText(this);
+        editText.setId(Integer.valueOf(hint));
+        editText.setText(title);
+        //editText.setHint(hint);
+        editTextListCourse.add(editText);
+        return editText;
+    }
+
+    // makes a new unit box with a default value
+    private EditText editTextUnitsWithValue(String hint, String units) {
+        EditText editText = new EditText(this);
+        editText.setId(Integer.valueOf(hint));
+        editText.setText(units);
+        //editText.setHint(hint);
+        editTextListUnits.add(editText);
+        return editText;
+    }
+
+    // makes a new grade spinner with a default position
+    private Spinner spinnerGradeWithValue(int grade) {
+        Spinner spinner = new Spinner(this);
+        //Spinner.setId(Integer.valueOf(hint));
+        //editText.setHint(hint);
+        String[] items = new String[]{"Select", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        spinner.setAdapter(adapter);
+        spinner.setSelection(grade);
+        spinnerList.add(spinner);
+
+        return spinner;
     }
 
     @Override

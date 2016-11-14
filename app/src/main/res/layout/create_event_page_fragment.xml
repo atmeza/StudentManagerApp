@@ -2,11 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.des.studentmanagerredux.CreateEventPage"
-    android:background="@color/redish1">
-
+    android:weightSum="1">
 
         <TextView
             android:layout_width="match_parent"
