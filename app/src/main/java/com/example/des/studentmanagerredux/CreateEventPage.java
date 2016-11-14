@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import com.example.des.studentmanagerredux.task.TaskItem;
 
 
 public class CreateEventPage extends Fragment {
@@ -40,19 +41,14 @@ public class CreateEventPage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         final EditText title = (EditText)view.findViewById(R.id.eventNameInputBox);
-                        final EditText date = (EditText)view.findViewById(R.id.eventDateTextInputBox);
+                        final EditText hour = (EditText)view.findViewById(R.id.eventTimeTextInputBox);
                         final EditText info = (EditText)view.findViewById(R.id.editEventInfoInputBox);
+                        int hourI = Integer.parseInt(hour.getText().toString());
+                        GregorianCalendar thisDate = ((Calendar_Page)getActivity()).getCurrentDate();
+                        thisDate.set(Calendar.HOUR,hourI);
                         String titleS = title.getText().toString();
-                        String dateS = date.getText().toString();
-                        char[] dateC = dateS.toCharArray();
-                        char[] dayC = new char[2];
-                        dayC[0] = dateC[0];
-                        dayC[1] = dateC[1];
-                        int day;
-                        int month;
-                        int year;
                         String infoS = info.getText().toString();
-
+                        TaskItem newTask = new TaskItem(thisDate,thisDate,0,false,titleS);
                     }
                 }
         );

@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.GregorianCalendar;
+
 /**
  * Created by alexm on 11/6/2016.
  */
@@ -41,16 +43,8 @@ public class List_Fragment extends ListFragment {
 
 
     }
-    void createEvent() {
-        /*Fragment create_event_page = getFragmentManager().findFragmentByTag("create_event_fragment_calendar");
-
-        if(create_event_page==null) {
-            create_event_page  = new Fragment();
-
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(android.R.id.content, create_event_page, "create_event_calendar_fragment");
-            transaction.commit();
-        }*///UNCOMMENT LATER
+    public GregorianCalendar getCurrentDate() {
+        return ((Calendar_Page)getActivity()).getCurrentDate();
     }
 
 
