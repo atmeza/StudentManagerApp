@@ -76,13 +76,14 @@ public class ToDoListItemView extends LinearLayout {
         mCheck = (CheckBox) this
                 .findViewById(R.id.task_item_checkBox);
 
-        mCheck.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+        mCheck.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                ToDoDbHelper dbHelper = new ToDoDbHelper(buttonView.getContext());
-                dbHelper.updateCheckbox(item, isChecked);
-                item.markComplete(isChecked);
-                //list.refresh(); // updates progress bar as well
+            public void onClick(View v) {
+                ToDoDbHelper dbHelper = new ToDoDbHelper(v.getContext());
+                dbHelper.updateCheckbox(item, mCheck.isChecked());
+                item.markComplete(mCheck.isChecked());
+                list.refresh();
+                dbHelper.close();
             }
         });
 
@@ -94,6 +95,7 @@ public class ToDoListItemView extends LinearLayout {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ToDoDbHelper dbHelper = new ToDoDbHelper(seekBar.getContext());
                 dbHelper.updateProgress(item, progress);
+                dbHelper.close();
             }
 
             @Override
@@ -127,8 +129,12 @@ public class ToDoListItemView extends LinearLayout {
                                     String newTask = String.valueOf(taskEditText.getText());
                                     if (!dbHelper.changeEventName(item, newTask)) {
                                         showErrorDialog();
+                                        dbHelper.close();
                                     }
-                                    else list.refresh();
+                                    else {
+                                        list.refresh();
+                                        dbHelper.close();
+                                    }
                                 }
                             })
                             .setNegativeButton("Cancel", null)

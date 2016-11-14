@@ -63,11 +63,10 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
 
         // insert the tuple into the table
         db.insert(TABLE, null, values);
-
     }
 
     /* Checks if name is already in database to prevent duplicates */
-    private boolean hasEvent(SQLiteDatabase db, String eventName) {
+    public boolean hasEvent(SQLiteDatabase db, String eventName) {
 
         String query = "SELECT * FROM " + TABLE + " WHERE " + COL_TASK_TITLE + "='" +
                 eventName + "';";
@@ -86,9 +85,11 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getWritableDatabase(); // database to work with
 
-        String selectQuery = "SELECT * FROM " + TABLE;
+        String selectQuery = "SELECT * FROM " + TABLE + " ORDER BY " + KEY_COMPLETE + " asc;";
+        //String selectQuery = "SELECT * FROM " + TABLE;
 
-        return db.rawQuery(selectQuery, null);
+        Cursor c = db.rawQuery(selectQuery, null);
+        return c;
     }
 
     // removes all elements in the table that share all characteristics with the input TaskItem
@@ -133,5 +134,6 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         db.execSQL("UPDATE " + TABLE + " SET " +
                 KEY_COMPLETE + " = \"" + isChecked + "\" WHERE " +
                 COL_TASK_TITLE + " = \"" + task.getTitle() + "\";");
+        db.close();
     }
 }
