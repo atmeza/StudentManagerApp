@@ -2,7 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.des.studentmanagerredux.CreateEventPage"
+    android:background="@color/redish1">
+
 
         <TextView
             android:layout_width="match_parent"
@@ -16,16 +20,16 @@
             android:id="@+id/eventNameInputBox"/>
 
         <TextView
-            android:text="@string/input_event_date_mm_dd_yyyy"
+            android:text="Input Event Time: H"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/eventDateTextInputTitle"
+            android:id="@+id/eventTextInputTitle"
             android:layout_weight="0.16" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/eventDateTextInputBox"/>
+            android:id="@+id/eventTimeTextInputBox"/>
 
         <TextView
             android:text="@string/input_event_info"
@@ -35,14 +39,14 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="188dp"
-            android:id="@+id/editEventIndoInputBox"
+            android:id="@+id/editEventInfoInputBox"
             android:layout_weight="0.91" />
 
         <Button
             android:text="Create Event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/CreateEventButton" />
+            android:id="@+id/createEventButton" />
 
         <Button
             android:text="Cancel"
