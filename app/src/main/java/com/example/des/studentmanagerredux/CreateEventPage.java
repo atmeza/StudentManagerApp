@@ -11,7 +11,7 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import com.example.des.studentmanagerredux.task.TaskItem;
-
+import android.widget.Toast;
 
 public class CreateEventPage extends Fragment {
 
@@ -43,7 +43,14 @@ public class CreateEventPage extends Fragment {
                         final EditText title = (EditText)view.findViewById(R.id.eventNameInputBox);
                         final EditText hour = (EditText)view.findViewById(R.id.eventTimeTextInputBox);
                         final EditText info = (EditText)view.findViewById(R.id.editEventInfoInputBox);
-                        int hourI = Integer.parseInt(hour.getText().toString());
+                        if (title.getText().length() == 0) {
+                            Toast.makeText(getActivity(),"Please give the event a title", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        int hourI = 12;
+                        if (hour.getText().length() > 0) {
+                            hourI = Integer.parseInt(hour.getText().toString());
+                        }
                         GregorianCalendar thisDate = ((Calendar_Page)getActivity()).getCurrentDate();
                         thisDate.set(Calendar.HOUR,hourI);
                         String titleS = title.getText().toString();
