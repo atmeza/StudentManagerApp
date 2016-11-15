@@ -28,6 +28,7 @@ TODO: Document functionality
 
 /**
  * Created by Matt on 10/25/16.
+ * Edited by Nikhil
  *
  * Compound control class for displaying tasks in to-do list
  */
