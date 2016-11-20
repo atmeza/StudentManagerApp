@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="edf9a5d0c3dd29d1d167bcc99cf55f53e38d041d">
+        sha1="41405483211e00de72a768f57aad2caf4d59db3e">
         <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4f588b7eaaebcf07604c188e26210ae2c258cb7f\classes.dex" />
     </item>
     <item
@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="29c3d789f1c3e58247844911d13b18813146d01b">
+        sha1="4d49acfab15ce85b1d4318401f82b8961096ddfa">
         <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_76e2d3160785ed18b40f5ff371cb24abb256aa82\classes.dex" />
     </item>
     <item

@@ -55,10 +55,15 @@ public class ToDoAdapter extends CursorAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
-        if (position % 2 == 1) {
-            view.setBackgroundColor(Color.LTGRAY);
-        } else {
-            view.setBackgroundColor(Color.WHITE);
+
+        if (((ToDoListItemView) view).isComplete())
+            view.setBackgroundColor(Color.rgb(102,255,153));
+        else {
+            if (position % 2 == 1) {
+                view.setBackgroundColor(Color.LTGRAY);
+            } else {
+                view.setBackgroundColor(Color.WHITE);
+            }
         }
 
         return view;
