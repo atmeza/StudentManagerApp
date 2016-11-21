@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="929826d23531ecccece71d3eac690099b6d5557c">
+        sha1="7e2ebaf4533ed0e8de85de611bc6b12b817b300b">
         <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2316418507e501cfdab64d737affc5b259226aef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_d2043cc1ac0bb1f4cdc1632f130f21410df44428\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -34,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="5de1435e8c16fa4472d7ecf5b2789c4fd78b666f">
+        sha1="67ded738919d31f53c95511fff7465cbb2e95fd1">
         <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7815067671997c510e694a14d44487181d861d1e\classes.dex" />
     </item>
     <item
@@ -45,69 +54,6 @@
         revision="24.0.3"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
         <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_1d9d216ece936c20915abb6f688d4ce2b7054428\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_fe11624221717f79b0547ca33d5a82c40c9c2bd6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6fc04f2f3065389c2d2a1745a2e3857b0fad102f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_33f471ed2ede3f35d159207c31fe2454e113bd01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_b7a713c8f64f88a88090abb865c6ecc2d7f5b28f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_68107db4a6b8f4bbcb27010e1f7e3e4f4b600925\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_e397b2cbb3fa794228bc823ab7201da075c6e4a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_d2043cc1ac0bb1f4cdc1632f130f21410df44428\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -171,6 +117,60 @@
         revision="24.0.3"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_e2af81b3101f94ad6258dab5e2a1de86b05d32d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_fe11624221717f79b0547ca33d5a82c40c9c2bd6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6fc04f2f3065389c2d2a1745a2e3857b0fad102f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_33f471ed2ede3f35d159207c31fe2454e113bd01\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_b7a713c8f64f88a88090abb865c6ecc2d7f5b28f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_68107db4a6b8f4bbcb27010e1f7e3e4f4b600925\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_e397b2cbb3fa794228bc823ab7201da075c6e4a1\classes.dex" />
     </item>
 
 </items>

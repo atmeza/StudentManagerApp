@@ -10,12 +10,18 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
+import com.example.des.studentmanagerredux.db.EventDbHelper;
+import com.example.des.studentmanagerredux.task.TaskAdapter;
 import com.example.des.studentmanagerredux.task.TaskItem;
+
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class CreateEventPage extends Fragment {
 
     private CreateEventPage self = this;
+    private EventDbHelper helper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,6 +62,10 @@ public class CreateEventPage extends Fragment {
                         String titleS = title.getText().toString();
                         String infoS = info.getText().toString();
                         TaskItem newTask = new TaskItem(thisDate,thisDate,0,false,titleS);
+                        helper.addEvent(newTask);
+                        TaskAdapter adapter = (TaskAdapter)getArguments().get("adapter");
+                        adapter.notifyDataSetChanged();
+
                     }
                 }
         );

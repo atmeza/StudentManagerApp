@@ -15,13 +15,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.*;
 
 import com.example.des.studentmanagerredux.task.TaskItem;
 
-public class EventDbHelper extends SQLiteOpenHelper {
-
+public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     // Database Version (not important to project)
     private static final int DATABASE_VERSION = 7;
 

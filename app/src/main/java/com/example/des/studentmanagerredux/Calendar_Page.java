@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
+import com.example.des.studentmanagerredux.task.TaskAdapter;
 
 import java.util.ArrayList;
 
@@ -30,6 +30,7 @@ public class Calendar_Page extends AppCompatActivity {
     final Context context = this;
     private Button button;
     public GregorianCalendar currentDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,9 @@ public class Calendar_Page extends AppCompatActivity {
 
                 if(list_fragment==null){
                     list_fragment = new List_Fragment();
+
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
                     transaction.add(android.R.id.content, list_fragment, "List_Fragment");
                     transaction.commit();
                 }
