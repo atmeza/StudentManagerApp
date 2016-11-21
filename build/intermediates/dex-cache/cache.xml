@@ -3,174 +3,174 @@
 
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="929826d23531ecccece71d3eac690099b6d5557c">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2316418507e501cfdab64d737affc5b259226aef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_a9bf1e360831b7a2a76d3b4bfc9464e87b2d31c5/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_c040499be21f25b137e59f13490bee1cc0d71f81\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_2e814b9de139cacbcde44ddb178e0e01d9c37245/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_5199b58f9905635b56f12bcc036353c28a390619/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f57c8fde66ff8b16b97b0b2a27d36147793b42fb/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5910d114f57075fd67a88c4f3c5961f820b5a307">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_63e554ad5ce2372bdf4fca842d0b130b2f3a938d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0879f8eef93ddd51ac3e62b9c14fbfa5c161d79e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_71c0a6d0be3789dcac4ee482214d579c4f224168/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_4e47f9e198bc990d86f460bbca6f2bc7632172cd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3967add44ec996d809ffd3d17b565965a7126786/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6e940d8b34f1f26e3e20887e860705df9f1425ca/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6889a5d4889b49e603e3a174842ead4d5c4936e1\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5de1435e8c16fa4472d7ecf5b2789c4fd78b666f">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7815067671997c510e694a14d44487181d861d1e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_2a3aeb9a53c3ea93e69df8d532381eb72b2fc130/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_1d9d216ece936c20915abb6f688d4ce2b7054428\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_7c70c3796666bc7b7c7dc72de4a0c92739f3d103/classes.dex" />
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_fe11624221717f79b0547ca33d5a82c40c9c2bd6\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_0e6f0bbbfb5521ceac5112bf0ed3f205ae0224b4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9a5b29f3f2d1ecd68f0cd7750e1e2ca312045897/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_86c9c7b5974f71e8a133cb448b669ee984877b3e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_8b4e0e7a87a541effdc5f62e71a23a17cacfabdf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_8736b5827c2c5a95cbc672750b0589794e954a17/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_749e9eadfb99483e3c97fdc613c45af827d6aca3/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6fc04f2f3065389c2d2a1745a2e3857b0fad102f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_c3e13835fe7ebc31711fb454fa0b580b3db5d090/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_33f471ed2ede3f35d159207c31fe2454e113bd01\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_b7a713c8f64f88a88090abb865c6ecc2d7f5b28f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_68107db4a6b8f4bbcb27010e1f7e3e4f4b600925\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_e397b2cbb3fa794228bc823ab7201da075c6e4a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_d2043cc1ac0bb1f4cdc1632f130f21410df44428\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_ed359a8cd0e1f196a52039ce1d12080ec4ab623b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_a225d48201ee2bc5e7738b54c79b29d49999c823\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_2b1112bb953a71b28f97008f55716f3aec956204\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a376f5061fc1e82c1a961dae9638cbba4737a332\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_774a2ea01275b820c25c6a757c57af890977a442\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_55222f9e2ea4146bfffbf8fde9f2d8a1cc13b56b/classes.dex" />
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_c2f1f700dc83c5a2c741995e210880359fbcfbee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\alexm\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_e2af81b3101f94ad6258dab5e2a1de86b05d32d4\classes.dex" />
     </item>
 
 </items>
