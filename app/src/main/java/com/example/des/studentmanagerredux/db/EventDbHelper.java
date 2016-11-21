@@ -178,4 +178,11 @@ public class EventDbHelper extends SQLiteOpenHelper {
                 KEY_COMPLETE + " = \"" + String.valueOf(task.isComplete()) + "\";");
 
     }
+
+    public void removeAllEvents()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DELETE FROM " + TABLE_NAME + ";");
+    }
 }
