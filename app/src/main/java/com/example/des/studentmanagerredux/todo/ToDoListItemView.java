@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -28,6 +29,7 @@ TODO: Document functionality
 
 /**
  * Created by Matt on 10/25/16.
+ * Edited by Nikhil
  *
  * Compound control class for displaying tasks in to-do list
  */
@@ -156,9 +158,14 @@ public class ToDoListItemView extends LinearLayout {
                     ToDoDbHelper dbHelper = new ToDoDbHelper(view.getContext());
                     dbHelper.removeEvent(item);
                     list.refresh();
+                    dbHelper.close();
                 }
             }
         });
+    }
+
+    public boolean isComplete() {
+        return item.isComplete();
     }
 
     public void updateTaskView()
