@@ -3,174 +3,282 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_81baddb1065ef640dfb61dcf239a4d93c0dae591\classes.dex" />
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_74e6081c48e0d7a896c714206eaa99b7725d40f5/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4302e68221eb9048826fcf7ec3bde7b1dddaec73\classes.dex" />
+        sha1="f6afcfbf1989631424f9ceaae6ee24777d3cf6ba">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.0_c338151661f571c07f3624fe7e3bb6964875a6af/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_bfbd66d6edc0533547304f8867772f6bb0bfddfd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_c0e7d6c9d819f2568133da59b7a8e64f608f4659\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="62f0166b8680a481c02ff156a21067d44c54f4ce">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4f588b7eaaebcf07604c188e26210ae2c258cb7f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_42c7622032b5ea4a94525b422f6cd1852ddcc497\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_cb92a9c543d5433ef1d16e69a0d7b8dc3d4f65c0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_acc348cffc7e3de0832fea673f50e439b1671cfd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d58a3dd143d521d837f8c823ed92a53a62b02f8e">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_76e2d3160785ed18b40f5ff371cb24abb256aa82\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_77302c71f130890d83ae029e60ec18de6d9389c3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_7ebb35f92ff420b478cdbc411ddcf361dede7e11\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_81bb77a4231be1dc8f6f75241a2f4cb294bc4fc8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_0f3bbf47517ef594e9b1448d447b6c2861537b06\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_e0a6dbb6736ca36f987792b338bbb95868fbaae7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_2df75c318d16b4e3868452d5ed410286d3dc8517\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e2109a9d3dffeb91d437024df01016cc676c4ea1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_79eaf11d81b4cddd75b2a11586af798354097d93\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c70869a94f636cd0ee0f8975afcffe9be64ececc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Nikhil\Desktop\Student_Manager_Redux\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_ab267a3f08f977fad25367cb62dc678b09b0f539\classes.dex" />
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_2668b639a79c47796918dcfc9b96967f6e9ffe8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bd11b3899f275668a9355f19cea2c2320f5f9d14">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.0_4d1b1d177610c4154a391416de65fdf91743557f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="580fa73d5bf63ffd04b9d66d0e75a2ed21842702">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.6.0_7ccb4b12ba9b151e5f992dfbf6622ed864280988/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="540ef18581ba93adf4576bbb6c7bb3898a6b969f">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_01f38b070a7f72cdc423ac5460f7ca7f1b2cf88f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_247880e7e594a77c350de9991042a9ab70c1199b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_e21ff0a07895aa3901a857e86b3c786aea01736f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="db0a4170961a16af6d7a5222bf90a5876eea4227">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.6.0_2de6fa7c94f688fbeb2290865aa7a3ac58ddda40/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_b7444b6a2e2c8beb7ebe10a94d6f1c8f5ea687dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_40b6780716758c262bcfe779318a348b70387e8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5243af50631020511cf2403789678149b1a319e6">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.6.0_21be8b3a930442f37b8f7702950f0e9cc99f6698/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7a343e17f154f513a09c12946fae0f172be079ec">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.6.0_7156b1ac2f1455ac1000d98c2e3cb65284e4512b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_6feac61d3c902d3b15174c25860683c03dba2e9d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_22cc8365d29ed6e5cea48867f42f411a18a9a45e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="93a0248fe0524b4fa2d16f5f7c3cff8452796454">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.6.0_89d28263f582f2450feedf5d233698768321c87b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_444cc116beda6090ce09ef13194d69683a188cf0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="614b2ffd04818e865e1c02cc149c6b92e518e862">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.0_2264e5eddf5ff677925e71d1396f1e6384f47d97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_d5a28b1795a7291ae1bf3dab2ad80429fa796c24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_2f853b9503b3e1ce27235df43332c3c19b6f4a3c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_058be4594ce74c25c25768eef268e7508eebf7da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_152568b54007cfc77ac2fb5e8a27c9d6e041988f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f861fce2e9fa167e7fe8d8558cf2cbb910b9fb34">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.6.0_a333933fc16ad0a053fcdf39977887f86190ff07/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_49976592fd99f1e07124dfba8d05e5c95f2af1d3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_fae473082ecaaf56b15a743ef1d4831db4556623/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_53bd5ed1a6f7aa071353d1b4ec79a0e1e291b142/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="74d1712880eb2b4ab37ddf3c6a3232c883756726">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.0_00a82f85a71085bc799dff5c4279ba1f07f3853c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7810127ce27ad64398cf1feefaf1445d1c6d535">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_fc9d15208637fb3dd430cb0c5d58d6aed5637a90/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d39f676be8400123523882d189a1d84040d34339">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.0_878206c477bb6cab8fc23348194fc2a733dbfe6e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a9f41e6463de88c3f979d796382fc24fb7e9cd41">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.0_4c447c3f2bebed34364ebe7bd3820205a2950a0d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/aliibrahim/AndroidStudioProjects/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_564b8a9fad167e14c0d9c60bc0f31c73115f1e0a/classes.dex" />
     </item>
 
 </items>
