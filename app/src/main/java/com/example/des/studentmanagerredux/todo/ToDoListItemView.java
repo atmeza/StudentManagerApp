@@ -29,7 +29,6 @@ TODO: Document functionality
 
 /**
  * Created by Matt on 10/25/16.
- * Edited by Nikhil
  *
  * Compound control class for displaying tasks in to-do list
  */
@@ -129,6 +128,7 @@ public class ToDoListItemView extends LinearLayout {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     String newTask = String.valueOf(taskEditText.getText());
+                                    newTask.replace("'","\'");
                                     if (!dbHelper.changeEventName(item, newTask)) {
                                         showErrorDialog();
                                         dbHelper.close();
