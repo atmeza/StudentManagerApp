@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -17,6 +18,7 @@ import com.example.des.studentmanagerredux.task.TaskItem;
 
 import android.widget.ListView;
 import android.widget.Toast;
+import android.os.Build;
 
 public class CreateEventPage extends Fragment {
 
@@ -47,18 +49,22 @@ public class CreateEventPage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         final EditText title = (EditText)view.findViewById(R.id.eventNameInputBox);
-                        final EditText hour = (EditText)view.findViewById(R.id.eventTimeTextInputBox);
+                        final TimePicker time = (TimePicker)view.findViewById(R.id.eventTimePicker);
                         final EditText info = (EditText)view.findViewById(R.id.editEventInfoInputBox);
                         if (title.getText().length() == 0) {
                             Toast.makeText(getActivity(),"Please give the event a title", Toast.LENGTH_SHORT).show();
                             return;
                         }
+                        //If API is older than Android 23 use defaults
                         int hourI = 12;
-                        if (hour.getText().length() > 0) {
-                            hourI = Integer.parseInt(hour.getText().toString());
+                        int minuteI = 0;
+                        if (Build.VERSION.SDK_INT >= 23) {
+                            hourI = time.getHour();
+                            minuteI = time.getMinute();
                         }
                         GregorianCalendar thisDate = ((Calendar_Page)getActivity()).getCurrentDate();
                         thisDate.set(Calendar.HOUR,hourI);
+                        thisDate.set(Calendar.MINUTE,minuteI);
                         String titleS = title.getText().toString();
                         String infoS = info.getText().toString();
                         TaskItem newTask = new TaskItem(thisDate,thisDate,0,false,titleS);
