@@ -24,7 +24,6 @@ public class CreateEventPage extends Fragment {
 
     private CreateEventPage self = this;
     private EventDbHelper helper;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class CreateEventPage extends Fragment {
                     }
                 }
         );
+
         final View createEventButton = view.findViewById(R.id.createEventButton);
         createEventButton.setOnClickListener(
                 new View.OnClickListener() {
@@ -68,6 +68,7 @@ public class CreateEventPage extends Fragment {
                         String titleS = title.getText().toString();
                         String infoS = info.getText().toString();
                         TaskItem newTask = new TaskItem(thisDate,thisDate,0,false,titleS);
+                        helper = (EventDbHelper)getArguments().getSerializable("helper");
                         helper.addEvent(newTask);
                         TaskAdapter adapter = (TaskAdapter)getArguments().get("adapter");
                         adapter.notifyDataSetChanged();
