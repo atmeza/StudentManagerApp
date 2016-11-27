@@ -68,8 +68,17 @@ public class ToDoList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         String itemName = String.valueOf(taskEditText.getText());
                         ToDoListItem taskItem = new ToDoListItem(itemName, 0 , false);
-                        dbHelper.addEvent(taskItem);
-                        refresh();
+                        if (dbHelper.hasEvent(dbHelper.getReadableDatabase(), itemName)) {
+                            AlertDialog aDialog = new AlertDialog.Builder(taskEditText.getContext())
+                                    .setTitle("Error: New Task Name Already Exists")
+                                    .setPositiveButton("Cancel", null)
+                                    .create();
+                            aDialog.show();
+                        }
+                        else {
+                            dbHelper.addEvent(taskItem);
+                            refresh();
+                        }
                     }
                 })
                 .setNegativeButton("Cancel", null)
@@ -77,8 +86,10 @@ public class ToDoList extends AppCompatActivity {
         dialog.show();
     }
 
+    /* Refreshes table whenever there is a change */
     public void refresh() {
-        onRestart();
+        mAdapter = new ToDoAdapter(this, dbHelper.getAllEvents(), 0);
+        mTaskListView.setAdapter(mAdapter);
     }
 
     @Override

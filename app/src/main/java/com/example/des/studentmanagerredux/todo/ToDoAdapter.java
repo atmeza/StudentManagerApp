@@ -2,6 +2,7 @@ package com.example.des.studentmanagerredux.todo;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -49,5 +50,22 @@ public class ToDoAdapter extends CursorAdapter {
         {
             throw new IllegalArgumentException("Can't bind TaskItem to control other than TaskItemView");
         }
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = super.getView(position, convertView, parent);
+
+        if (((ToDoListItemView) view).isComplete())
+            view.setBackgroundColor(Color.rgb(102,255,153));
+        else {
+            if (position % 2 == 1) {
+                view.setBackgroundColor(Color.LTGRAY);
+            } else {
+                view.setBackgroundColor(Color.WHITE);
+            }
+        }
+
+        return view;
     }
 }

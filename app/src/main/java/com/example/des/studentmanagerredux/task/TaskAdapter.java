@@ -2,6 +2,8 @@ package com.example.des.studentmanagerredux.task;
 
 import android.content.Context;
 import android.database.Cursor;
+
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -13,7 +15,7 @@ import android.widget.CursorAdapter;
  * Created by Matt on 11/3/16.
  */
 
-public class TaskAdapter extends CursorAdapter {
+public class TaskAdapter extends CursorAdapter implements Serializable{
 
     public TaskAdapter(Context context, Cursor c, int flags)
     {

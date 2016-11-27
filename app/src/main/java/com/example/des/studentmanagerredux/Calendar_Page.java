@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CalendarView;
 import android.widget.CalendarView.OnDateChangeListener;
+import java.util.GregorianCalendar;
 import android.widget.Toast;
 import android.app.Activity;
 import android.app.Dialog;
@@ -20,7 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
+import com.example.des.studentmanagerredux.task.TaskAdapter;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,8 @@ public class Calendar_Page extends AppCompatActivity {
 
     final Context context = this;
     private Button button;
+    public GregorianCalendar currentDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +49,14 @@ public class Calendar_Page extends AppCompatActivity {
             public void onSelectedDayChange(CalendarView calendarView, int year, int month,
                                             int dayOfMonth) {
 
-
+                currentDate = new GregorianCalendar(year,month,dayOfMonth);
                 List_Fragment list_fragment = (List_Fragment)getSupportFragmentManager().findFragmentByTag("List_Fragment");
 
                 if(list_fragment==null){
                     list_fragment = new List_Fragment();
+
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
                     transaction.add(android.R.id.content, list_fragment, "List_Fragment");
                     transaction.commit();
                 }
@@ -63,7 +68,9 @@ public class Calendar_Page extends AppCompatActivity {
         });
     }
 
-
+    public GregorianCalendar getCurrentDate() {
+        return currentDate;
+    }
 
 
 }
