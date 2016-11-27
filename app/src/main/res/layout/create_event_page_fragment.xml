@@ -5,7 +5,7 @@
     android:weightSum="1"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.des.studentmanagerredux.CreateEventPage"
-    android:background="@color/redish1">
+    android:background="?attr/colorButtonNormal">
 
 
         <TextView
@@ -20,16 +20,18 @@
             android:id="@+id/eventNameInputBox"/>
 
         <TextView
-            android:text="Input Event Time: H"
+            android:text="Input Event Time:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/eventTextInputTitle"
-            android:layout_weight="0.16" />
+            android:layout_weight="0.58" />
 
-        <EditText
+        <TimePicker
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eventTimeTextInputBox"/>
+            android:layout_height="149dp"
+            android:id="@+id/eventTimePicker"
+            android:timePickerMode="spinner"
+            android:layout_weight="0.47" />
 
         <TextView
             android:text="@string/input_event_info"
@@ -38,9 +40,8 @@
             android:id="@+id/eventInfoInputTitle" />
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="188dp"
-            android:id="@+id/editEventInfoInputBox"
-            android:layout_weight="0.91" />
+            android:layout_height="87dp"
+            android:id="@+id/editEventInfoInputBox" />
 
         <Button
             android:text="Create Event"

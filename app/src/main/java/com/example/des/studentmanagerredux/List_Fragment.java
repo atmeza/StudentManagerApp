@@ -2,7 +2,7 @@ package com.example.des.studentmanagerredux;
 
 //import android.support.v4.app.Fragment;
 
-import android.icu.util.GregorianCalendar;
+import java.util.GregorianCalendar;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -33,17 +33,24 @@ public class List_Fragment extends ListFragment {
     TaskAdapter adapter;
 
     @Override
-    public ViewGroup onCreateView(LayoutInflater inflator, final ViewGroup containter,
+    public ViewGroup onCreateView(LayoutInflater inflator, final ViewGroup container,
                                   Bundle savedInstanceState){
-        final ViewGroup rview = (ViewGroup)inflator.inflate(R.layout.calendar_fragment1, containter, false);
+        final ViewGroup rview = (ViewGroup)inflator.inflate(R.layout.calendar_fragment1, container, false);
 
         helper = new EventDbHelper(this.getContext());
-
-        ;
         adapter = new TaskAdapter(this.getContext(), helper.getEventsOnDay(((Calendar_Page) getActivity()).getCurrentDate()),0);
 
         setListAdapter(adapter);
         setRetainInstance(true);
+
+        TextView dateTitle = (TextView)(rview.findViewById(R.id.date_title));
+        // A copy of the calendar to assist with creation of the dateTitle
+        GregorianCalendar thisDate = ((Calendar_Page)getActivity()).getCurrentDate();
+        int day = thisDate.get(Calendar.DAY_OF_MONTH);
+        int month = thisDate.get(Calendar.MONTH) + 1; // The +1 accounts for the fact that the calendar uses months from 0-11
+        int year = thisDate.get(Calendar.YEAR);
+        String date = Integer.toString(month) + "-" + Integer.toString(day) + "-" + Integer.toString(year);
+        dateTitle.setText(date);
 
         final View addEventButton = rview.findViewById(R.id.add_event);
         addEventButton.setOnClickListener(
@@ -91,6 +98,5 @@ public class List_Fragment extends ListFragment {
 
 
     }
-
 
 }
