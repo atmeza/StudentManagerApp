@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="220270b6788327b5d436e407acc58501013cfae2">
+        sha1="e93a6dac1f4cdbaf39e5f00c364e7960cc99beb9">
         <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_63e554ad5ce2372bdf4fca842d0b130b2f3a938d/classes.dex" />
     </item>
     <item
@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0dc00aaae9169f2a142a11dc6dd2393a400b0011">
+        sha1="cbbf5ddff6083239880c863b7cc0a0d94413d08e">
         <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_71c0a6d0be3789dcac4ee482214d579c4f224168/classes.dex" />
     </item>
     <item
