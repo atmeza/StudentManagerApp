@@ -73,6 +73,11 @@ public class CreateEventPage extends Fragment {
                         TaskAdapter adapter = (TaskAdapter)getArguments().get("adapter");
                         adapter.notifyDataSetChanged();
 
+                        //Close the page following the event creation
+                        FragmentManager fm = getFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        ft.remove(self);
+                        ft.commit();
                     }
                 }
         );
