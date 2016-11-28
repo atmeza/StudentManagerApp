@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "492327749454",
+    "firebase_url": "https://studentmanagerredux.firebaseio.com",
+    "project_id": "studentmanagerredux",
+    "storage_bucket": "studentmanagerredux.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492327749454:android:71c337f8598e0439",
+        "android_client_info": {
+          "package_name": "com.example.des.samplehomescreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492327749454-1vbj86sh1e5ivunn3bb9a3e9c5c6rnod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.des.samplehomescreen",
+            "certificate_hash": "2E6A22FBCF856666AB327ACF49693C940ECC3AD6"
+          }
+        },
+        {
+          "client_id": "492327749454-b08lhv42nfp3qai8k6c1peciplnp0okq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHHOT45dTq9ZgjMNiHSpJOxlVIuY54rFI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492327749454-b08lhv42nfp3qai8k6c1peciplnp0okq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
