@@ -9,6 +9,7 @@ package com.example.des.studentmanagerredux.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -25,12 +26,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.content.Context.MODE_PRIVATE;
+
 
 public class GPADbHelper extends SQLiteOpenHelper {
 
     // static variables so that database knows whether to sync to firebase
     private static boolean loggedIn; // whether user is logged in
     private static String username; // username of logged in user
+    private static long lastAccess; // last time of access
+    private DatabaseReference mDataRef;
+    private Object firebaseTime;
+    private Context context;
 
     // tell database that user is logged in
     public static void login(String un) {
@@ -46,13 +53,190 @@ public class GPADbHelper extends SQLiteOpenHelper {
     // notify whether user is currently logged in
     public static boolean loggedIn() {return loggedIn;}
 
-    // sync this database with firebase, overwriting the older database with the newer one
-    public void firebaseSync() {
+    public static String getUsername() {
+        return username;
+    }
+
+    // overwrite the firebase database with the local database
+    public void firebaseOverwrite() {
+
+        System.out.println("overwriting firebase");
+
+        // reset the firebase database and fill it with the rows from the local database
+        mDataRef = FirebaseDatabase.getInstance().getReference("users");
+        mDataRef = mDataRef.child(username);
+        mDataRef = mDataRef.child("Grades");
+
+        System.out.println(mDataRef.toString());
+
+        mDataRef.removeValue();
+
+        // get cursor of all events locally
+        Cursor cursor = getAllClasses();
+
+        //loop through all the database events
+        cursor.moveToFirst();
+        Map<String, String> gradeMap = new HashMap<String, String>();
+        while (!cursor.isAfterLast()) {
+            String className = cursor.getString(1);
+            String classUnits = cursor.getString(2);
+            int classGrade = cursor.getInt(3);
+
+            System.out.println(className + ", " + classUnits + ", " + classGrade);
+
+            // get a unique id for this event
+            DatabaseReference uniqueKey = mDataRef.push();
+            uniqueKey.setValue(className + classUnits + classGrade);
+
+            String uniqueString = uniqueKey.getKey();
+
+            //Use the new reference to add the data
+            mDataRef = mDataRef.child(uniqueString);
+
+            System.out.println(mDataRef.toString());
+
+            // map of data being added
+            gradeMap.clear();
+
+            gradeMap.put("class", className);
+            gradeMap.put("units", classUnits);
+            gradeMap.put("grade", "" + classGrade);
+
+            mDataRef.setValue(gradeMap);
+            mDataRef = mDataRef.getParent();
+            System.out.println(mDataRef.toString());
+
+            cursor.moveToNext();
+        }
+
+        /* // get timestamp of most recent firebase sync
+        mDataRef = FirebaseDatabase.getInstance().getReference(username + "/LastAccess");
+        mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                firebaseTime = dataSnapshot.getValue();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        System.out.println(firebaseTime.toString());
+        GregorianCalendar FBCal = new GregorianCalendar();
+        FBCal.setTimeInMillis(Long.getLong(firebaseTime.toString()).longValue());
+        System.out.println(FBCal.getTimeInMillis());
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("timestamp", MODE_PRIVATE);
+        long localTime = sharedPreferences.getLong("time", 0);
+
+        GregorianCalendar localCal = new GregorianCalendar();
+        localCal.setTimeInMillis(localTime);
+
+        // compare the local and firebase times
+
+        // if the local time is more recent than the firebase time
+        if (localCal.compareTo(FBCal) > 0) {
+
+            // reset the firebase database and fill it with the rows from the local database
+            mDataRef = FirebaseDatabase.getInstance().getReference(username + "/Grades");
+
+            // get cursor of all events locally
+            Cursor cursor = getAllClasses();
+
+            //loop through all the database events
+            cursor.moveToFirst();
+            Map<String, String> gradeMap = new HashMap<String, String>();
+            while (!cursor.isAfterLast()) {
+                String className = cursor.getString(1);
+                String classUnits = cursor.getString(2);
+                int classGrade = cursor.getInt(3);
+
+                // get a unique id for this event
+                String uniqueKey = mDataRef.push().getKey();
+
+                //Use the new reference to add the data
+                mDataRef.child(uniqueKey);
+
+                // map of data being added
+                gradeMap.clear();
+
+                gradeMap.put("class", className);
+                gradeMap.put("units", classUnits);
+                gradeMap.put("grade", "" + classGrade);
+
+                cursor.moveToNext();
+            }
+
+        }
+
+        // otherwise, if the local time is less recent than the firebase time, then clear the local
+        // database and fill it with the rows from firebase
+
+        // update the timestamps */
 
     }
 
+    // overwrite the local database with hte data from firebase
+    public void localOverwrite() {
+
+        System.out.println("overwriting local");
+
+        // move firebase to the user's grades
+        mDataRef = FirebaseDatabase.getInstance().getReference("users");
+        mDataRef = mDataRef.child(username);
+        mDataRef = mDataRef.child("Grades");
+
+        System.out.println(mDataRef.toString());
+
+        // clear the local database
+        this.removeAllClasses();
+
+        // parse through the firebase, inserting each set of three elements into the local
+        // database as one row
+        mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    int count = 0;
+                    String newClass = "";
+                    String newUnits = "";
+                    String newGrade = "";
+                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                        Object data = postPostSnapshot.getValue();
+                        System.out.println(data.toString());
+                        count++;
+
+                        // if count = 1, then the next value is the class name
+                        if (count == 1) {
+                            newClass = data.toString();
+                        }
+
+                        // if count = 2, then the next value is the grade name
+                        if (count == 2) {
+                            newUnits = data.toString();
+                        }
+
+                        // if count = 3, then next value is the units, read it, then store all three
+                        // values and reset the count
+                        if (count == 3) {
+                            newGrade = data.toString();
+
+                            addClass(newClass, newGrade, Integer.parseInt(newUnits));
+                            count = 0;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
     // Database Version (not important to project)
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 8;
 
     // Database Name (name of entire database)
     private static final String DATABASE_NAME = "classes";
@@ -72,6 +256,7 @@ public class GPADbHelper extends SQLiteOpenHelper {
     // Constructor for the Database helper, utilizes constants defined above to function
     public GPADbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     // definition of the table, format of: _i, title, units, grade option

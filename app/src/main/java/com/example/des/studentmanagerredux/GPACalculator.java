@@ -83,6 +83,7 @@ public class GPACalculator extends AppCompatActivity {
             mHelper.addClass(title, units, grade);
         }
 
+        mHelper.firebaseOverwrite();
 
     }
 

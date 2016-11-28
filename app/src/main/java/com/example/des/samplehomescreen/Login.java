@@ -4,6 +4,8 @@ package com.example.des.samplehomescreen;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +33,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.GregorianCalendar;
+import java.util.Objects;
+
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,6 +47,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "Login";
+    private static DatabaseReference mDataRef;
+    private Object firebaseTime = new Object();
+    private GPADbHelper GPAHelper = new GPADbHelper(this);
+    private ToDoDbHelper ToDoHelper = new ToDoDbHelper(this);
+    private EventDbHelper eventHelper = new EventDbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +155,49 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             GPADbHelper.login(email.replace('.', '_'));
                             EventDbHelper.login(email.replace('.', '_'));
                             ToDoDbHelper.login(email.replace('.', '_'));
-                                Intent intent = new Intent(view.getContext() , HomeScreen.class);
+
+                            // if the user is logged in, then update the firebase/local databases
+                            if (GPADbHelper.loggedIn()) {
+
+
+                                mDataRef = Register.getDbRef();
+                                FirebaseDatabase.getInstance().goOffline();
+                                FirebaseDatabase.getInstance().goOnline();
+
+                                String username = GPADbHelper.getUsername();
+                                System.out.println("USERNAME: " + username);
+
+                                // get timestamp of most recent firebase sync
+                                mDataRef = FirebaseDatabase.getInstance().getReference("users");
+                                mDataRef = mDataRef.getRoot().child("users").child(username).child("LastAccess");
+
+                                System.out.println("PATH: " + mDataRef.toString());
+                                System.out.println("GETTING TIME");
+
+                                mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        System.out.println("ABOUT TO GET TIME");
+                                        System.out.println("TIME IS: " + dataSnapshot.getValue());
+                                        System.out.println("THIS IS THE TIME BEING GOTTEN");
+                                        //try {
+                                        //    Thread.sleep(300000);                 //1000 milliseconds is one second.
+                                        //} catch(InterruptedException ex) {
+                                        //    Thread.currentThread().interrupt();
+                                        //}
+                                        completeLogin(view, email.replace('.', '_'), dataSnapshot, dataSnapshot.getValue().toString());
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        System.out.println("firebase read cancelled");
+                                    }
+                                });
+
+                            }
+
+
+                            Intent intent = new Intent(view.getContext() , HomeScreen.class);
                                 startActivity(intent);
 
                         }
@@ -153,6 +205,67 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         // ...
                     }
                 });
+    }
+
+    private void completeLogin(View v, String username, DataSnapshot dataSnap, String time) {
+
+        // firebaseTime = dataSnap.getValue();
+
+        System.out.println("TIME GOTTEN");
+
+        // System.out.println(firebaseTime.toString());
+        // System.out.println("CLASS OF OBJECT: " + firebaseTime.getClass());
+        GregorianCalendar FBCal = new GregorianCalendar();
+        FBCal.setTimeInMillis(Long.parseLong(time));
+        System.out.println(FBCal.getTimeInMillis());
+
+        SharedPreferences sharedPreferences = getSharedPreferences("timestamp", MODE_PRIVATE);
+        long localTime = sharedPreferences.getLong("time", 0);
+
+        GregorianCalendar localCal = new GregorianCalendar();
+        localCal.setTimeInMillis(localTime);
+
+        // compare the local and firebase times
+        System.out.println("LOCAL TIME: " + localCal.getTimeInMillis());
+        System.out.println("ONLINE TIME: " + FBCal.getTimeInMillis());
+
+        System.out.println(localCal.compareTo(FBCal));
+
+        // if the local time is more recent than the firebase time, then overwrite firebase
+         /*if (localCal.compareTo(FBCal) > 0) {
+            GPAHelper.firebaseOverwrite();
+            ToDoHelper.firebaseOverwrite();
+        } */
+
+        // if firebase is more recent than the local time, then overwrite local database
+        //else if (localCal.compareTo(FBCal) < 0) {
+            GPAHelper.removeAllClasses();
+            GPAHelper.localOverwrite();
+            eventHelper.removeAllEvents();
+            eventHelper.localOverwrite();
+
+            /* Cursor cursor = eventHelper.getAllEvents();
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            System.out.println(cursor.getString(1));
+            cursor.moveToNext();
+        } */
+            ToDoHelper.removeAllEvents();
+            ToDoHelper.localOverwrite();
+        
+
+        // update firebase and local times to be the same
+        System.out.println("setting local time");
+        long currTime = System.currentTimeMillis();
+        SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
+        editor.putLong("time", currTime);
+        editor.commit();
+
+        System.out.println("setting online time");
+        mDataRef = mDataRef.getRoot().child("users").child(username).child("LastAccess");
+        mDataRef.setValue("" + System.currentTimeMillis());
+        System.out.println("online time set");
+
     }
 }
 

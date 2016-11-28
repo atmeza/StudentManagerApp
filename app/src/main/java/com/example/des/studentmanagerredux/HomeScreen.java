@@ -1,15 +1,33 @@
 package com.example.des.studentmanagerredux;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.des.studentmanagerredux.db.GPADbHelper;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.GregorianCalendar;
+
 public class HomeScreen extends AppCompatActivity {
+
+    private DatabaseReference mDataRef;
+    private Object firebaseTime = new Object();
+    private GPADbHelper GPAHelper = new GPADbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home_screen);
     }
 
