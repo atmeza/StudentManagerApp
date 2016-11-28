@@ -142,9 +142,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         else {
 
                             // notify databases that user is logged in
-                            GPADbHelper.login(email);
-                            EventDbHelper.login(email);
-                            ToDoDbHelper.login(email);
+                            GPADbHelper.login(email.replace('.', '_'));
+                            EventDbHelper.login(email.replace('.', '_'));
+                            ToDoDbHelper.login(email.replace('.', '_'));
                                 Intent intent = new Intent(view.getContext() , HomeScreen.class);
                                 startActivity(intent);
 

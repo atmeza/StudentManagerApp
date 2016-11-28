@@ -3,6 +3,7 @@ package com.example.des.samplehomescreen;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -134,6 +135,12 @@ public void createAccount(View v) {
                         mDatabaseReference.setValue("EXAMPLE GRADE");
                         mDatabaseReference = mDatabaseReference.getParent().child("LastAccess");
                         mDatabaseReference.setValue("" + System.currentTimeMillis());
+
+                        // store current time locally as well
+                        SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
+                        editor.putLong("time", System.currentTimeMillis());
+                        editor.commit();
+
                         /*Map<String, String> Map1 = new HashMap<String, String>();
                         Map1.put("class", "cse110");
                         Map1.put("units", "4");
@@ -159,8 +166,8 @@ public void createAccount(View v) {
                         Map1.put("start", "100");
                         Map1.put("end", "0001");
                         mDatabaseReference.setValue(Map1);
-                        mDatabaseReference = mDatabaseReference.getParent();
-                        mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        mDatabaseReference = mDatabaseReference.getParent(); */
+                        /* mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
