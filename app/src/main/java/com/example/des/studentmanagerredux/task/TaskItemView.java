@@ -4,9 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -51,7 +49,7 @@ public class TaskItemView extends LinearLayout {
     }
 
     /**
-     * Inflates the views in the layout.
+     * Inflates the views in the layout and sets up instance variables
      *
      * @param context
      *           the current context for the view.
@@ -70,6 +68,8 @@ public class TaskItemView extends LinearLayout {
 
         mDeleteButton = (Button) this
                 .findViewById(R.id.task_item_view_delete);
+
+        //Delete button event listener - removes task from database
         mDeleteButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +82,10 @@ public class TaskItemView extends LinearLayout {
         });
     }
 
+    /**
+     * Refreshes the view with data from the task
+     */
+
     public void updateTaskView()
     {
         mTitle.setText(task.getTitle());
@@ -89,11 +93,21 @@ public class TaskItemView extends LinearLayout {
         mProgress.setProgress(task.getProgress());
     }
 
+    /**
+     * Sets the TaskItem associated with this View to the given TaskItem, and refreshes the display
+     * @param task - TaskItem to bind View to
+     */
+
     public void setTask(TaskItem task)
     {
         this.task = task;
         updateTaskView();
     }
+
+    /**
+     *
+     * @return TaskItem associated with this View
+     */
 
     public TaskItem getTask()
     {

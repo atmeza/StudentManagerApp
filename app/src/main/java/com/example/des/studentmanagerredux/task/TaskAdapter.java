@@ -13,6 +13,8 @@ import android.widget.CursorAdapter;
 
 /**
  * Created by Matt on 11/3/16.
+ *
+ * Extension of CursorAdapter for displaying database queries using a TaskItemView control
  */
 
 public class TaskAdapter extends CursorAdapter implements Serializable{
@@ -22,6 +24,14 @@ public class TaskAdapter extends CursorAdapter implements Serializable{
         super(context, c, flags);
     }
 
+    /**
+     * Internal use - returns a new view to add to the Container
+     * @param context - Context of adapter
+     * @param cursor - Cursor to linked database
+     * @param parent - Parent of the Container
+     * @return created TaskItemView
+     */
+
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent)
     {
@@ -29,15 +39,25 @@ public class TaskAdapter extends CursorAdapter implements Serializable{
         return newTaskView;
     }
 
+    /**
+     * Internal use - updates view with relevant data from cursor
+     * @param view - View to bind
+     * @param context - Context of adapter
+     * @param cursor - Cursor from which to pull data
+     */
+
     @Override
     public void bindView(View view, Context context, Cursor cursor)
     {
+        //Database empty
         if(cursor.getCount() == 0) {
             return;
         }
 
+        //Reject non-TaskItemViews
         if(view instanceof TaskItemView)
         {
+            //Reconstruct TaskItem from DB data
             Calendar taskStart = new GregorianCalendar(cursor.getInt(2), 0, 0);
             Calendar taskEnd = new GregorianCalendar(cursor.getInt(3), 0, 0);
             int progress = cursor.getInt(4);
@@ -45,6 +65,7 @@ public class TaskAdapter extends CursorAdapter implements Serializable{
             String title = cursor.getString(1);
 
             TaskItem newTask = new TaskItem(taskStart, taskEnd, progress, complete, title);
+            //Push TaskItem into TaskView
             ((TaskItemView) view).setTask(newTask);
         }
         else
