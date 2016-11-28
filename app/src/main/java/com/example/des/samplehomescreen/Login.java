@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 import com.example.des.studentmanagerredux.HomeScreen;
 import com.example.des.studentmanagerredux.R;
+import com.example.des.studentmanagerredux.db.EventDbHelper;
+import com.example.des.studentmanagerredux.db.GPADbHelper;
+import com.example.des.studentmanagerredux.db.ToDoDbHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -102,6 +105,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+
+        // notify databases that user is logged out since they entered the login page again
+        EventDbHelper.logout();
+        GPADbHelper.logout();
+        ToDoDbHelper.logout();
     }
     @Override
     public void onStop() {
@@ -113,7 +121,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void signIn(View v){
 
         final View view = v;
-        String email = etUsername.getText().toString();
+        final String email = etUsername.getText().toString();
         String password = etPassword.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -133,7 +141,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                         else {
 
-
+                            // notify databases that user is logged in
+                            GPADbHelper.login(email);
+                            EventDbHelper.login(email);
+                            ToDoDbHelper.login(email);
                                 Intent intent = new Intent(view.getContext() , HomeScreen.class);
                                 startActivity(intent);
 

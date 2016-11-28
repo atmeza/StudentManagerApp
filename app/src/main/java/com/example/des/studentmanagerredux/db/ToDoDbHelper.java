@@ -25,6 +25,24 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
     private static final String KEY_PROGRESS = "progress"; // event progress (int)
     private static final String KEY_COMPLETE = "complete"; // is event complete (either "true" or "false")
 
+    // static variables so that database knows whether to sync to firebase
+    private static boolean loggedIn; // whether user is logged in
+    private static String username; // username of logged in user
+
+    // tell database that user is logged in
+    public static void login(String un) {
+        loggedIn = true;
+        username = un;
+    }
+
+    // tell database that user is logged out
+    public static void logout() {
+        loggedIn = false;
+    }
+
+    // notify whether user is currently logged in
+    public static boolean loggedIn() {return loggedIn;}
+
     public ToDoDbHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }

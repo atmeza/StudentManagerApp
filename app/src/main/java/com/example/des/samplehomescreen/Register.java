@@ -18,6 +18,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
@@ -28,7 +37,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "Login";
-
+    private DatabaseReference mDatabaseReference;
 
 
 
@@ -69,7 +78,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        createAccount();
+        createAccount(v);
         /*switch (v.getId()){
             //case R.id.bRegister:
 
@@ -97,8 +106,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-public void createAccount() {
-    String email = etUsername.getText().toString();
+public void createAccount(View v) {
+    final View view = v;
+    final String email = etUsername.getText().toString();
     String password = etPassword.getText().toString();
     mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -112,6 +122,62 @@ public void createAccount() {
                     if (!task.isSuccessful()) {
                         Toast.makeText(Register.this, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show();
+                    }
+
+                    // successful register, make firebase data branch for user, and go back
+                    // to the login page
+                    else {
+
+                        mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+                        mDatabaseReference = mDatabaseReference.child(email.replace('.', '_'));
+                        mDatabaseReference = mDatabaseReference.child("Grades");
+                        mDatabaseReference.setValue("EXAMPLE GRADE");
+                        mDatabaseReference = mDatabaseReference.getParent().child("LastAccess");
+                        mDatabaseReference.setValue("" + System.currentTimeMillis());
+                        /*Map<String, String> Map1 = new HashMap<String, String>();
+                        Map1.put("class", "cse110");
+                        Map1.put("units", "4");
+                        Map1.put("letter", "A");
+                        mDatabaseReference.setValue(Map1); */
+                        mDatabaseReference = mDatabaseReference.getParent().child("ToDo");
+                        mDatabaseReference.setValue("EXAMPLE TASK");
+                        /* Map1 = new HashMap<String, String>();
+                        Map1.put("name", "homework");
+                        Map1.put("progress", "100");
+                        Map1.put("done", "true");
+                        mDatabaseReference.setValue(Map1); */
+                        mDatabaseReference = mDatabaseReference.getParent().child("Events");
+                        //Map1 = new HashMap<String, String>();
+                        mDatabaseReference.setValue("EXAMPLE EVENT");
+                        /*Map1.put("name", "cse110");
+                        Map1.put("start", "100000");
+                        Map1.put("end", "100001");
+                        mDatabaseReference.setValue(Map1);
+                        mDatabaseReference = mDatabaseReference.getParent().child("EXAMPLE EVENT2");
+                        Map1.clear();
+                        Map1.put("name", "cse10");
+                        Map1.put("start", "100");
+                        Map1.put("end", "0001");
+                        mDatabaseReference.setValue(Map1);
+                        mDatabaseReference = mDatabaseReference.getParent();
+                        mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                                        Object data = postPostSnapshot.getValue();
+                                        System.out.println(data.toString());
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                            }
+                        }); */
+
+                        Intent intent = new Intent(view.getContext() , Login.class);
+                        startActivity(intent);
                     }
 
                     // ...

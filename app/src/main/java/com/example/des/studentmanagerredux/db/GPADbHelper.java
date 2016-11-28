@@ -16,8 +16,40 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Calendar;
 import java.util.*;
 
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class GPADbHelper extends SQLiteOpenHelper {
+
+    // static variables so that database knows whether to sync to firebase
+    private static boolean loggedIn; // whether user is logged in
+    private static String username; // username of logged in user
+
+    // tell database that user is logged in
+    public static void login(String un) {
+        loggedIn = true;
+        username = un;
+    }
+
+    // tell database that user is logged out
+    public static void logout() {
+        loggedIn = false;
+    }
+
+    // notify whether user is currently logged in
+    public static boolean loggedIn() {return loggedIn;}
+
+    // sync this database with firebase, overwriting the older database with the newer one
+    public void firebaseSync() {
+
+    }
 
     // Database Version (not important to project)
     private static final int DATABASE_VERSION = 6;
