@@ -8,15 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import com.example.des.studentmanagerredux.db.GPADbHelper;
+
 import java.util.ArrayList;
 import java.util.List;
-import com.example.des.studentmanagerredux.db.GPADbHelper;
 
 
 public class GPACalculator extends AppCompatActivity {
@@ -26,13 +28,15 @@ public class GPACalculator extends AppCompatActivity {
     private List<EditText> editTextListCourse = new ArrayList<EditText>();
     private List<EditText> editTextListUnits = new ArrayList<EditText>();
     private List<Spinner> spinnerList = new ArrayList<Spinner>();
-
+    private List<Button> buttonList = new ArrayList<Button>();
+    private int nextRowId = 0;
     private GPADbHelper mHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gpa_calculator);
+
 
     }
 
@@ -84,7 +88,6 @@ public class GPACalculator extends AppCompatActivity {
         }
 
         mHelper.firebaseOverwrite();
-
     }
 
     // new addRow method sets values od new row to params passed in
@@ -97,8 +100,50 @@ public class GPACalculator extends AppCompatActivity {
         tableRow.addView(editTextCourseWithValue("0", title));
         tableRow.addView(editTextUnitsWithValue("0", units));
         tableRow.addView(spinnerGradeWithValue(grade));
+        tableRow.addView(buttonDelete());
         tableLayout.addView(tableRow);
     }
+
+    private void addRow(){
+        addRow("","",0);
+    }
+
+
+    private Button buttonDelete(){
+        Button button = new Button(this);
+        button.setId(nextRowId);
+
+        button.setText("Delete");
+        //Drawable drawable = new Drawable;
+        //Drawable.createFromPath("@drawable/delete_button");
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Button button = (Button)v;
+                int id = button.getId();
+                for(int i = 0; i < buttonList.size(); i++){
+                    if(buttonList.get(i).getId() == id){
+                        buttonList.remove(i);
+                        editTextListUnits.remove(i);
+                        editTextListCourse.remove(i);
+                        spinnerList.remove(i);
+                        TableLayout tableLayout  = (TableLayout)findViewById(R.id.mainTable);
+                        tableLayout.removeViewAt(i + 1);
+                        tableLayout.invalidate();
+                        tableLayout.refreshDrawableState();
+                        return;
+                    }
+
+                }
+            }
+        });
+        nextRowId++;
+        buttonList.add(button);
+        return button;
+    }
+
+
 
     // makes a new course with a default value
     private EditText editTextCourseWithValue(String hint, String title) {
@@ -143,11 +188,11 @@ public class GPACalculator extends AppCompatActivity {
 
 
     private EditText editTextCourse(String hint) {
-      EditText editText = new EditText(this);
-      editText.setId(Integer.valueOf(hint));
-      //editText.setHint(hint);
-      editTextListCourse.add(editText);
-      return editText;
+        EditText editText = new EditText(this);
+        editText.setId(Integer.valueOf(hint));
+        //editText.setHint(hint);
+        editTextListCourse.add(editText);
+        return editText;
     }
 
 
@@ -174,15 +219,7 @@ public class GPACalculator extends AppCompatActivity {
         return spinner;
     }
 
-    private void addRow(){
-        TableLayout tableLayout  = (TableLayout)findViewById(R.id.mainTable);
-        TableRow tableRow = new TableRow(this);
-        tableRow.setPadding(0, 10, 0, 0);
-        tableRow.addView(editTextCourse("0"));
-        tableRow.addView(editTextUnits("0"));
-        tableRow.addView(spinnerGrade());
-        tableLayout.addView(tableRow);
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -242,19 +279,20 @@ public class GPACalculator extends AppCompatActivity {
 
 
             if ((points >= 0) && (credits > 0)) {
-               totalCredits += credits;
-               totalPoints += points * credits;
+                totalCredits += credits;
+                totalPoints += points * credits;
             }
         }
 
         double GPA = 0;
         if(totalCredits > 0){
             GPA = totalPoints / totalCredits;
+            //     maxGPA= (totalPoints+4*(maxCredits-totalCredits))/maxCredits;
         }
 
         String s;
         if(GPA == 0){
-                s = "Enter data!";
+            s = "Enter data!";
         }
         else{
             int g=(int)(GPA*100.0);

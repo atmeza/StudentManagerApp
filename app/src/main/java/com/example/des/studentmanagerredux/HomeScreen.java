@@ -93,4 +93,10 @@ public class HomeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, GPACalculator.class);
         startActivity(intent);
     }
+
+    public void sendMessagePasswordManager(View view)
+    {
+        Intent intent = new Intent(this, PasswordManager.class);
+        startActivity(intent);
+    }
 }
