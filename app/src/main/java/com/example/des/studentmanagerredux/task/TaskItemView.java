@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
@@ -25,7 +26,7 @@ TODO: Document functionality
 
 public class TaskItemView extends LinearLayout {
 
-    private CheckedTextView mTitle;
+    private TextView mTitle;
     private Button mDeleteButton;
     private SeekBar mProgress;
 
@@ -64,7 +65,7 @@ public class TaskItemView extends LinearLayout {
         mProgress = (SeekBar) this
                 .findViewById(R.id.task_item_view_progress);
 
-        mTitle = (CheckedTextView) this
+        mTitle = (TextView) this
                 .findViewById(R.id.task_item_view_title);
 
         mDeleteButton = (Button) this
