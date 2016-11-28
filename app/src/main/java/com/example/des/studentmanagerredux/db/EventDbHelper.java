@@ -21,10 +21,16 @@ import java.util.Calendar;
 import java.util.*;
 
 import com.example.des.studentmanagerredux.task.TaskItem;
+import com.example.des.studentmanagerredux.todo.ToDoListItem;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     // Database Version (not important to project)
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 11;
 
     // Database Name (name of entire database)
     private static final String DATABASE_NAME = "events";
@@ -47,6 +53,8 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     private static boolean loggedIn; // whether user is logged in
     private static String username; // username of logged in user
 
+    private DatabaseReference mDataRef;
+
     // tell database that user is logged in
     public static void login(String un) {
         loggedIn = true;
@@ -64,6 +72,127 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     // Constructor for the Database helper, utilizes constants defined above to function
     public EventDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    // overwrite the firebase database with the local database
+    public void firebaseOverwrite() {
+
+        System.out.println("overwriting firebase");
+
+        // reset the firebase database and fill it with the rows from the local database
+        mDataRef = FirebaseDatabase.getInstance().getReference("users");
+        mDataRef = mDataRef.child(username);
+        mDataRef = mDataRef.child("Events");
+
+        System.out.println(mDataRef.toString());
+
+        mDataRef.removeValue();
+
+        // get cursor of all events locally
+        Cursor cursor = getAllEvents();
+
+        //loop through all the database events
+        cursor.moveToFirst();
+        Map<String, String> eventMap = new HashMap<String, String>();
+        while (!cursor.isAfterLast()) {
+            String eventName = cursor.getString(1);
+            Long eventStart = cursor.getLong(2);
+            Long eventEnd = cursor.getLong(3);
+
+            System.out.println(eventName + ", " + eventStart + ", " + eventEnd);
+
+            // get a unique id for this event
+            DatabaseReference uniqueKey = mDataRef.push();
+            uniqueKey.setValue(eventName + eventStart + eventEnd);
+
+            String uniqueString = uniqueKey.getKey();
+
+            //Use the new reference to add the data
+            mDataRef = mDataRef.child(uniqueString);
+
+            System.out.println(mDataRef.toString());
+
+            // map of data being added
+            eventMap.clear();
+
+            eventMap.put("name", eventName);
+            eventMap.put("start", "" + eventStart);
+            eventMap.put("end", "" + eventEnd);
+
+            mDataRef.setValue(eventMap);
+            mDataRef = mDataRef.getParent();
+            System.out.println(mDataRef.toString());
+
+            cursor.moveToNext();
+        }
+
+
+    }
+
+    // overwrite the local database with hte data from firebase
+    public void localOverwrite() {
+
+        System.out.println("overwriting local");
+
+        // move firebase to the user's grades
+        mDataRef = FirebaseDatabase.getInstance().getReference("users");
+        mDataRef = mDataRef.child(username);
+        mDataRef = mDataRef.child("Events");
+
+        System.out.println(mDataRef.toString());
+
+        // clear the local database
+        this.removeAllEvents();
+
+        // parse through the firebase, inserting each set of three elements into the local
+        // database as one row
+        mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    int count = 0;
+                    String newTitle = "";
+                    String newStart = "";
+                    String newEnd = "";
+                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                        Object data = postPostSnapshot.getValue();
+                        System.out.println(data.toString());
+                        count++;
+
+                        // if count = 1, then the next value is the end
+                        if (count == 1) {
+                            System.out.println(data.toString());
+                            newEnd = data.toString();
+                        }
+
+                        // if count = 2, then the next value is the name
+                        if (count == 2) {
+                            System.out.println(data.toString());
+                            newTitle = data.toString();
+                        }
+
+                        // if count = 3, then next value is the start, read it, then store all three
+                        // values and reset the count
+                        if (count == 3) {
+                            System.out.println(data.toString());
+                            newStart = data.toString();
+
+                            GregorianCalendar startCal = new GregorianCalendar();
+                            GregorianCalendar endCal = new GregorianCalendar();
+                            startCal.setTimeInMillis(Long.parseLong(newStart));
+                            endCal.setTimeInMillis(Long.parseLong(newEnd));
+
+                            addEvent(new TaskItem(startCal, endCal, newTitle));
+                            count = 0;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     // definition of the table, format of: _id, title, start, end, progress, complete
@@ -108,6 +237,8 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
 
         // insert the tuple into the table
         db.insert(TABLE_NAME, null, values);
+
+        firebaseOverwrite();
 
     }
 
@@ -195,6 +326,8 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
                 KEY_END_DATE + " = " + task.getEnd().getTimeInMillis() + " AND " +
                 KEY_PROGRESS + " = " + task.getProgress() + " AND " +
                 KEY_COMPLETE + " = \"" + String.valueOf(task.isComplete()) + "\";");
+
+        firebaseOverwrite();
 
     }
 

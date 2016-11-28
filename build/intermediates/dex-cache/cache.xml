@@ -3,48 +3,75 @@
 
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_a9bf1e360831b7a2a76d3b4bfc9464e87b2d31c5/classes.dex" />
+        sha1="4cfc5a74aa9453cbec685cdbcb3e3f3539b483bd">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-lite-9.6.0_48126c51385e783814a26c3c4431a86d520ed25c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_2e814b9de139cacbcde44ddb178e0e01d9c37245/classes.dex" />
+        sha1="53f7fbab5e6f4149eb5a1cdeabaeeeee11a84ebe">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-config-9.6.0_b63d2ba78104497d36b6e126283594a475afb4ef/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-instantapps/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_5199b58f9905635b56f12bcc036353c28a390619/classes.dex" />
+        sha1="5fef4ad8c5b2519596b80a241d56b69dffcd6845">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-instantapps-9.6.0_c990d7662686cd94e61602809a1569e6fc61e316/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f57c8fde66ff8b16b97b0b2a27d36147793b42fb/classes.dex" />
+        sha1="a5da6fc5a6f39aee309ae6ae670e1b942759dc51">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wearable-9.6.0_d243cf866e508cfd0409fda016f5e1cd0a9d809b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_0e6f0bbbfb5521ceac5112bf0ed3f205ae0224b4/classes.dex" />
+        sha1="415336382149f2a79eb80599e340e188f6724d6d">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-9.6.0_80cc18fd196511e9d99fc9230814032e9e7e8b64/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1f4bb2577a30d0b3268fed038ed59230709ad593">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-9.6.0_5663238afb28b0d3bd1670a9e1972d175886525b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7357a05eea2a049c33488c7e8c6f887b3483d4b8">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-maps-9.6.0_8463ba19bde4b28ede97c7b72de517680328b819/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9f5c557145ddef094005eb73d72a7eaf330a0cf1">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-identity-9.6.0_9e26b3de49afc911a28ad809f80f499ab6c3e08d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -52,125 +79,404 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e93a6dac1f4cdbaf39e5f00c364e7960cc99beb9">
+        sha1="f75f01946224a37d53decb8a36496d0ae74dacce">
         <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_63e554ad5ce2372bdf4fca842d0b130b2f3a938d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9a5b29f3f2d1ecd68f0cd7750e1e2ca312045897/classes.dex" />
+        sha1="bf803332f826adea247cc452d0bb04d7943f0007">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-drive-9.6.0_2d240aa5b4fa1adc1e128a0a9a086f790d9775ad/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="cbbf5ddff6083239880c863b7cc0a0d94413d08e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_71c0a6d0be3789dcac4ee482214d579c4f224168/classes.dex" />
+        sha1="1bf2ceb0034efe20249a561096f6e288cce7a0a4">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-9.6.0_74c9e3d00f87200d3ae79ddcfa6d197fc24327bd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-awareness/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_4e47f9e198bc990d86f460bbca6f2bc7632172cd/classes.dex" />
+        sha1="26cd46f7bc6e1f269062b61269317a29329a9a7b">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-awareness-9.6.0_646e295788c1f5d81f6559018ac122f16a4f6e90/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_86c9c7b5974f71e8a133cb448b669ee984877b3e/classes.dex" />
+        sha1="3270d392adef5decc7bace1a3c2e749bec7bf19e">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-places-9.6.0_75cff45e309a2af65787b265572af5310eb0f131/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_8b4e0e7a87a541effdc5f62e71a23a17cacfabdf/classes.dex" />
+        sha1="93a0248fe0524b4fa2d16f5f7c3cff8452796454">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.6.0_9d23c663c366075bfe046aa689314d58d51e3a61/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_8736b5827c2c5a95cbc672750b0589794e954a17/classes.dex" />
+        sha1="f2c9c986087e5862518757d0c988c8eac1a47bfd">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-framework-9.6.0_ad7ce3cc2f35ea35b76c845e5ebad41f08453f30/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_749e9eadfb99483e3c97fdc613c45af827d6aca3/classes.dex" />
+        sha1="0ef21408e3142ffbfbd4a7ec1762c3325c6c386c">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-auth-base-9.6.0_dced683ad829c93129407071f1ed739b8533906b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_3967add44ec996d809ffd3d17b565965a7126786/classes.dex" />
+        sha1="5243af50631020511cf2403789678149b1a319e6">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-9.6.0_f4024086da8a05e2002a88be9a1b83a93dc7b67c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6e940d8b34f1f26e3e20887e860705df9f1425ca/classes.dex" />
+        sha1="12e94600a0ea3beae6ea0f1d18a0768ded5bc1ae">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-9.6.0_9c98f3e48cab0d4f813c44f6289d903bbb54ccde/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_c3e13835fe7ebc31711fb454fa0b580b3db5d090/classes.dex" />
+        sha1="74d1712880eb2b4ab37ddf3c6a3232c883756726">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.6.0_caff24e51a2180185229455b11e86cdde09e440f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_2a3aeb9a53c3ea93e69df8d532381eb72b2fc130/classes.dex" />
+        sha1="5e651c1430cc9b8a3b3b5a9d92bb173214dfdf42">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.6.0_df58d3e2716523ce7c087f03f479f0ac9ceacbd4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_55222f9e2ea4146bfffbf8fde9f2d8a1cc13b56b/classes.dex" />
+        sha1="7a343e17f154f513a09c12946fae0f172be079ec">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.6.0_b05323d6ab49084718b36778aa068609fdf0e633/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.6.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_7c70c3796666bc7b7c7dc72de4a0c92739f3d103/classes.dex" />
+        sha1="ea5537e2a88ce0497d3e2272b1cf93f2e0c77b0d">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-location-9.6.0_3de92ab4c2d167e565c7d2340395b7f2eaff49f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d39f676be8400123523882d189a1d84040d34339">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.6.0_683bc747dbb5c020301142fc004eb856b0cbf65a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ba2f029ff37297295d2d197ac6e957b361bfccaf">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.6.0_fc311aa996fc9d09a83aa230872fd41195cb213b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43ab9b69758a0f22706629223c367e9bd478e1a8">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-safetynet-9.6.0_4f2bb09cd8fa8e9684f8a245ed1d4e5471c21cd0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f6afcfbf1989631424f9ceaae6ee24777d3cf6ba">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.6.0_d43fe76a0155c6a218ee36dd0cdb675910f2bfce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4ab00b7d310cfdfff3a9446554485647153d0792">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-games-9.6.0_b29301e3581649eaba97c7bf89ffcaec96c739c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a9f41e6463de88c3f979d796382fc24fb7e9cd41">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.6.0_295e6450c8a5a3adabcf4c95e68fb14f10474ddb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de2c50f4a24277d22d675d598640da6d4622b14d">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.6.0_9385177476fd3fd9326a5db40125078dda8378ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="bd11b3899f275668a9355f19cea2c2320f5f9d14">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.6.0_ae4167e61b5faf224f2f07b7a2c6b778d31358af/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="614b2ffd04818e865e1c02cc149c6b92e518e862">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.6.0_67759831bd0870bbd02e6523b079b3a6320aadb3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f4540ad2a6e3741694e9332f0c20607c780fae6c">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-wallet-9.6.0_e3652dcee778988e4e4e745cef47bb6bacfb5c3c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-clearcut/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="eb96a230c7b55d545fbdee45157a5a75b2b26284">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-clearcut-9.6.0_e5700a0a84cce1b9f3a260b669a2bd24c81b42e1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6079f942bb34faee179b4c46396a26fbbfc43e5d">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-plus-9.6.0_997ceda791727565bfb787660699949d9a99f746/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a723c85825d9591baec200523c10662e30c8bed7">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-ads-9.6.0_f9953d89cd1b68e802631732f2802bc388a38027/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a917154cf730ea6ec2495705309e6a4065cde2ac">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-panorama-9.6.0_21bb4b0799a941c656a6cc3ba16c9308242cd2f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="300e72616fdf265bb36bff7adb1ebec7b1d72817">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-fitness-9.6.0_c56a05c6be7e4c3cb80cae3986bd64f42ba35776/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ce5313bb5ccc0c1e10c995e4efb2f2b08c848b39">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-9.6.0_232eecd0b44e6ea1ebb037c94c65ceb8884dcef7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="97e3259dcdaa9b33014a849f6d3bdbb4ef478383">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-9.6.0_a44f3de6e3d27c3d30a737cb18732ee9c5bb4f21/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c48db997d87eb3e3ad47713cfbfe7cb878a2e66c">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-api-9.6.0_24ffedf3a48a89bed988c6b0f519ffd6fefc3a36/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="266e4ac186afacc3b220a0cf8382348283b42407">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-vision-9.6.0_29cedca1ce6912f8974e390a0b3bf0c087136bf7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="73699fb64ea3de4a43d0f5c37dc525a5e1341ca1">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appinvite-9.6.0_317c4d11b971e0cc1f237f4f2fb204d5396d22b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d57767271a9c140da143ec0db9a0673b6d96eccb">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-cast-9.6.0_53c96f2ca160b4e420e9fb22427acd602ea10442/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a93aa431de60b775c91158433f3c687f1d32cb9c">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-9.6.0_90e358524f615fb40da2216df61b3a82026a8af6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/palette-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-palette-v7-24.0.0_7a880d974556ce582b23e0ad326d5b293c09e896/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gass/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6d16df2955bbd154b36819386cfd2e3b7f7cae5b">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gass-9.6.0_ed1f8d398ee3cf872f9c4ecba84b6f7b996011e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="938ba83fbb26987368049237e47718d56e91e222">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-nearby-9.6.0_4e56c7ba2c3eb1db5a60c35c086c8d126e5408e7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d1e7862a5a7675940acb6efcab34b38de89c9e18">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-9.6.0_2dd10c535a3e188947545f9acf34a931120f6989/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-mediarouter-v7-24.0.0_de953252a7e74063917b08d31c7983f05345ca11/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="580fa73d5bf63ffd04b9d66d0e75a2ed21842702">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.6.0_831f69ac50e204932ecf939270594f51538871e8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_acf8118d4a717f4b42a13e799928fe725de8aac5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f861fce2e9fa167e7fe8d8558cf2cbb910b9fb34">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.6.0_345be1dd31a490bdba06fe418b21a82c4c1852a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.6.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="db0a4170961a16af6d7a5222bf90a5876eea4227">
+        <dex dex="/Users/TygerYang/Documents/ProjectCSE110/Student_Manager_Redux/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-database-connection-9.6.0_307477350807ca32e4eef94df341155ce9a993df/classes.dex" />
     </item>
 
 </items>

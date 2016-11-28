@@ -3,10 +3,12 @@ package com.example.des.studentmanagerredux.task;
 import java.util.Calendar;
 
 /**
+ * Data representation of an item in the calendar planner
  * Created by Matt on 10/28/16.
  */
 
 public class TaskItem {
+    //Const max value for progress bar
     public final static int PROGRESS_MAX = 100;
 
     private Calendar taskStart;
