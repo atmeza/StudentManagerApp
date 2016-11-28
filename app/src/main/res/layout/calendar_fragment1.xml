@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:background="?attr/colorButtonNormal"
-    android:textAlignment="center">
+    android:textAlignment="center"
+    android:id="@+id/calendar_fragment">>
 
     <TextView
         android:text="Date"

@@ -89,14 +89,17 @@ public class List_Fragment extends ListFragment {
         return rview;
     }
 
-    public void onListItemClick(ListView l, ViewGroup view, int position, long id){
-        TextView text = (TextView)view.findViewById(R.id.txtitem);
-        Toast.makeText(getActivity(),text.getText().toString(),Toast.LENGTH_LONG).show();
-
-
-
-
-
+    public void onListItemClick(ListView l, ViewGroup view, int position, long id) {
+        TextView text = (TextView) view.findViewById(R.id.txtitem);
+        Toast.makeText(getActivity(), text.getText().toString(), Toast.LENGTH_LONG).show();
     }
 
+    public void refreshAdapter() {
+        adapter = new TaskAdapter(this.getContext(), helper.getEventsOnDay(((Calendar_Page) getActivity()).getCurrentDate()),0);;
+        setListAdapter(adapter);
+    }
+
+
+
 }
+

@@ -58,8 +58,10 @@ public class TaskAdapter extends CursorAdapter implements Serializable{
         if(view instanceof TaskItemView)
         {
             //Reconstruct TaskItem from DB data
-            Calendar taskStart = new GregorianCalendar(cursor.getInt(2), 0, 0);
-            Calendar taskEnd = new GregorianCalendar(cursor.getInt(3), 0, 0);
+            Calendar taskStart = new GregorianCalendar(0, 0, 0);
+            taskStart.setTimeInMillis(cursor.getLong(2));
+            Calendar taskEnd = new GregorianCalendar(0, 0, 0);
+            taskEnd.setTimeInMillis(cursor.getLong(3));
             int progress = cursor.getInt(4);
             boolean complete = Boolean.parseBoolean(cursor.getString(5));
             String title = cursor.getString(1);
