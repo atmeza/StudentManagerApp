@@ -38,6 +38,8 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home_screen);
+
+        updateUpcomingEvents();
     }
 
     @Override
@@ -45,6 +47,35 @@ public class HomeScreen extends AppCompatActivity {
     {
         super.onStart();
 
+        updateUpcomingEvents();
+    }
+
+    public void sendMessageToDo(View view)
+    {
+        Intent intent = new Intent(this, ToDoList.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageCalendar(View view)
+    {
+        Intent intent = new Intent(this, Calendar_Page.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageGPACalculator(View view)
+    {
+        Intent intent = new Intent(this, GPACalculator.class);
+        startActivity(intent);
+    }
+
+    public void sendMessagePasswordManager(View view)
+    {
+        Intent intent = new Intent(this, PasswordManager.class);
+        startActivity(intent);
+    }
+
+    private void updateUpcomingEvents()
+    {
         EventDbHelper db = new EventDbHelper(this);
         Cursor res = db.getEventsOnDay(Calendar.getInstance());
 
@@ -73,30 +104,5 @@ public class HomeScreen extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ary);
         ListView view = (ListView)findViewById(R.id.recent_events);
         view.setAdapter(adapter);
-
-    }
-
-    public void sendMessageToDo(View view)
-    {
-        Intent intent = new Intent(this, ToDoList.class);
-        startActivity(intent);
-    }
-
-    public void sendMessageCalendar(View view)
-    {
-        Intent intent = new Intent(this, Calendar_Page.class);
-        startActivity(intent);
-    }
-
-    public void sendMessageGPACalculator(View view)
-    {
-        Intent intent = new Intent(this, GPACalculator.class);
-        startActivity(intent);
-    }
-
-    public void sendMessagePasswordManager(View view)
-    {
-        Intent intent = new Intent(this, PasswordManager.class);
-        startActivity(intent);
     }
 }
