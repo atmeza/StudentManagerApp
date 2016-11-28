@@ -46,6 +46,7 @@ public class GPADbHelper extends SQLiteOpenHelper {
     // notify whether user is currently logged in
     public static boolean loggedIn() {return loggedIn;}
 
+    // sync this database with firebase, overwriting the older database with the newer one
     public void firebaseSync() {
 
     }
