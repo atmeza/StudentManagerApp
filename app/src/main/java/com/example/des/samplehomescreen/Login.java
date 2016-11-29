@@ -21,7 +21,9 @@ import com.example.des.studentmanagerredux.HomeScreen;
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
 import com.example.des.studentmanagerredux.db.GPADbHelper;
+import com.example.des.studentmanagerredux.db.PMDbHelper;
 import com.example.des.studentmanagerredux.db.ToDoDbHelper;
+import com.example.des.studentmanagerredux.pwmanager.PWAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -52,6 +54,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private GPADbHelper GPAHelper = new GPADbHelper(this);
     private ToDoDbHelper ToDoHelper = new ToDoDbHelper(this);
     private EventDbHelper eventHelper = new EventDbHelper(this);
+    private PMDbHelper PWHelper = new PMDbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +136,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         final View view = v;
         final String email = etUsername.getText().toString();
         String password = etPassword.getText().toString();
+        // TODO: Empty Login or Password leads to Fatal Exception
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -155,6 +159,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             GPADbHelper.login(email.replace('.', '_'));
                             EventDbHelper.login(email.replace('.', '_'));
                             ToDoDbHelper.login(email.replace('.', '_'));
+                            PWHelper.login(email.replace('.', '_'));
 
                             // if the user is logged in, then update the firebase/local databases
                             if (GPADbHelper.loggedIn()) {
@@ -252,7 +257,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         } */
             ToDoHelper.removeAllEvents();
             ToDoHelper.localOverwrite();
-        
+        PWHelper.removeAllPWs();
+        PWHelper.localOverwrite();
+
+
 
         // update firebase and local times to be the same
         System.out.println("setting local time");

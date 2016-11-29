@@ -71,13 +71,14 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Settings"
+        android:text="Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button20"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="sendMessageLogout"/>
 
     <ImageView
         android:layout_width="60dp"
