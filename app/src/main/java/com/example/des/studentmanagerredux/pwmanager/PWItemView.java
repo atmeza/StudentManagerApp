@@ -51,7 +51,6 @@ public class PWItemView extends LinearLayout {
     }
 
     private void initializeViews(final Context context) {
-        // TODO
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.setOrientation(LinearLayout.VERTICAL);
@@ -82,7 +81,6 @@ public class PWItemView extends LinearLayout {
                         .setPositiveButton("Change", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // TODO: change UserName and Password Method
                                 changeUserNameAndPassword();
                             }
                         })

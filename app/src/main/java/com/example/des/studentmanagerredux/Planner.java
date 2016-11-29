@@ -51,4 +51,9 @@ public class Planner extends AppCompatActivity {
         });
     }
 
+    public void refresh() {
+        mAdapter = new TaskAdapter(this, dbHelper.getAllEvents(), 0);
+        mTaskListView.setAdapter(mAdapter);
+    }
+
 }

@@ -136,6 +136,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         final View view = v;
         final String email = etUsername.getText().toString();
         String password = etPassword.getText().toString();
+        // TODO: Empty Login or Password leads to Fatal Exception
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -158,6 +159,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             GPADbHelper.login(email.replace('.', '_'));
                             EventDbHelper.login(email.replace('.', '_'));
                             ToDoDbHelper.login(email.replace('.', '_'));
+                            PWHelper.login(email.replace('.', '_'));
 
                             // if the user is logged in, then update the firebase/local databases
                             if (GPADbHelper.loggedIn()) {

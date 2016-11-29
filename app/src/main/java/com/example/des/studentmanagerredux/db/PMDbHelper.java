@@ -202,6 +202,8 @@ public class PMDbHelper extends SQLiteOpenHelper {
         values.put(ENTRY_PASSWORD, entry.getPassword());
 
         db.insert(TABLE, null, values);
+
+        firebaseOverwrite();
     }
 
     public void removeEntry(PWItem entry) {
@@ -211,6 +213,8 @@ public class PMDbHelper extends SQLiteOpenHelper {
                 COL_ENTRY_TITLE + " = \"" + entry.getTitle() + "\" AND " +
                 ENTRY_USERNAME + " = \"" + entry.getUserName() + "\" AND " +
                 ENTRY_PASSWORD + " = \"" + entry.getPassword() + "\";");
+
+        firebaseOverwrite();
     }
 
     public boolean hasEvent(SQLiteDatabase db, String entryTitle, String entryUserName) {
@@ -241,6 +245,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
                 COL_ENTRY_TITLE + " = \"" + entry.getTitle() + "\" AND " +
                 ENTRY_USERNAME + " = \"" + entry.getUserName() + "\";");
 
+        firebaseOverwrite();
         return true;
     }
 
