@@ -21,6 +21,7 @@ import com.example.des.studentmanagerredux.HomeScreen;
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
 import com.example.des.studentmanagerredux.db.GPADbHelper;
+import com.example.des.studentmanagerredux.db.PMDbHelper;
 import com.example.des.studentmanagerredux.db.ToDoDbHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -52,6 +53,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private GPADbHelper GPAHelper = new GPADbHelper(this);
     private ToDoDbHelper ToDoHelper = new ToDoDbHelper(this);
     private EventDbHelper eventHelper = new EventDbHelper(this);
+    private PMDbHelper PMHelper = new PMDbHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +122,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         EventDbHelper.logout();
         GPADbHelper.logout();
         ToDoDbHelper.logout();
+        PMDbHelper.logout();
     }
     @Override
     public void onStop() {
@@ -158,6 +161,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 GPADbHelper.login(email.replace('.', '_'));
                                 EventDbHelper.login(email.replace('.', '_'));
                                 ToDoDbHelper.login(email.replace('.', '_'));
+                                PMDbHelper.login(email.replace('.', '_'));
 
                                 // if the user is logged in, then update the firebase/local databases
                                 if (GPADbHelper.loggedIn()) {
@@ -256,6 +260,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         } */
             ToDoHelper.removeAllEvents();
             ToDoHelper.localOverwrite();
+            PMHelper.removeAllPWs();
+            PMHelper.localOverwrite();
         
 
         // update firebase and local times to be the same
