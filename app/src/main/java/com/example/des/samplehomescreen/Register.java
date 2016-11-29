@@ -117,7 +117,8 @@ public void createAccount(View v) {
     final View view = v;
     if (etAge.getText().toString().equals("") || etName.getText().toString().equals("")
             || etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
-        System.out.print("print");
+        Toast.makeText(Register.this, "please fill all fields",
+                Toast.LENGTH_SHORT).show();
     } else {
         final String email = etUsername.getText().toString();
         String password = etPassword.getText().toString();
