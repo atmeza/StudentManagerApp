@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
 import com.example.des.studentmanagerredux.task.TaskItem;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +36,10 @@ public class DatabaseTest {
         appContext = InstrumentationRegistry.getTargetContext();
 
         db = new EventDbHelper(appContext);
+        EventDbHelper.login("DatabaseTest@test_tst");
         db.removeAllEvents();
+
+
     }
 
     @Test
@@ -133,5 +137,11 @@ public class DatabaseTest {
             c.moveToFirst();
             assertEquals("Incorrect event removed", c.getString(1), "Task 3");
         }
+    }
+
+    @After
+    public void cleanup() throws Exception {
+        db.removeAllEvents();
+        EventDbHelper.logout();
     }
 }
