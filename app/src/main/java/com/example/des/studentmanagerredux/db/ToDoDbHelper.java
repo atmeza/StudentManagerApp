@@ -307,4 +307,12 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE + ";"); // remove everything from
 
     }
+
+    // remove all tasks and then sync with firebase
+    public void removeTasksSync() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DELETE FROM " + TABLE + ";");
+        firebaseOverwrite();
+    }
 }

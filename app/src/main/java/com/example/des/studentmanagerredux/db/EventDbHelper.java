@@ -337,4 +337,12 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
 
         db.execSQL("DELETE FROM " + TABLE_NAME + ";");
     }
+
+    // remove all events and then sync with firebase
+    public void removeEventsSync() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DELETE FROM " + TABLE_NAME + ";");
+        firebaseOverwrite();
+    }
 }
