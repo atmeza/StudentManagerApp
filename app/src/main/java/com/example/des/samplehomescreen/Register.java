@@ -1,7 +1,6 @@
 package com.example.des.samplehomescreen;
 
 
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.provider.ContactsContract;
@@ -41,8 +40,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "Login";
     private static DatabaseReference mDatabaseReference;
-
-
 
 
     @Override
@@ -96,11 +93,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 break;
         }*/
     }
+
     @Override
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
+
     @Override
     public void onStop() {
         super.onStop();
@@ -113,72 +112,72 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         return mDatabaseReference;
     }
 
-public void createAccount(View v) {
-    final View view = v;
-    if (etAge.getText().toString().equals("") || etName.getText().toString().equals("")
-            || etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
-        Toast.makeText(Register.this, "please fill all fields",
-                Toast.LENGTH_SHORT).show();
-    } else {
-        final String email = etUsername.getText().toString();
-        String password = etPassword.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+    public void createAccount(View v) {
+        final View view = v;
+        if (etAge.getText().toString().equals("") || etName.getText().toString().equals("")
+                || etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
+            Toast.makeText(Register.this, "please fill all fields",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            final String email = etUsername.getText().toString();
+            String password = etPassword.getText().toString();
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(Register.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(Register.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
 
-                        // successful register, make firebase data branch for user, and go back
-                        // to the login page
-                        else {
+                            // successful register, make firebase data branch for user, and go back
+                            // to the login page
+                            else {
 
-                            mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
-                            mDatabaseReference = mDatabaseReference.child(email.replace('.', '_'));
-                            // mDatabaseReference = mDatabaseReference.child("Grades");
-                            // mDatabaseReference.setValue("EXAMPLE GRADE");
-                            mDatabaseReference = mDatabaseReference.child("LastAccess");
-                            mDatabaseReference.setValue("" + System.currentTimeMillis());
+                                mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
+                                mDatabaseReference = mDatabaseReference.child(email.replace('.', '_'));
+                                // mDatabaseReference = mDatabaseReference.child("Grades");
+                                // mDatabaseReference.setValue("EXAMPLE GRADE");
+                                mDatabaseReference = mDatabaseReference.child("LastAccess");
+                                mDatabaseReference.setValue("" + System.currentTimeMillis());
 
-                            mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-                                    System.out.println("REGISTER, THIS IS THE TIME: " + dataSnapshot.getValue().toString());
-                                }
+                                mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        System.out.println("REGISTER, THIS IS THE TIME: " + dataSnapshot.getValue().toString());
+                                    }
 
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
 
-                                }
-                            });
+                                    }
+                                });
 
-                            // store current time locally as well
-                            SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
-                            editor.putLong("time", System.currentTimeMillis());
-                            editor.commit();
+                                // store current time locally as well
+                                SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
+                                editor.putLong("time", System.currentTimeMillis());
+                                editor.commit();
 
                         /*Map<String, String> Map1 = new HashMap<String, String>();
                         Map1.put("class", "cse110");
                         Map1.put("units", "4");
                         Map1.put("letter", "A");
                         mDatabaseReference.setValue(Map1); */
-                            // mDatabaseReference = mDatabaseReference.getParent().child("ToDo");
-                            // mDatabaseReference.setValue("EXAMPLE TASK");
+                                // mDatabaseReference = mDatabaseReference.getParent().child("ToDo");
+                                // mDatabaseReference.setValue("EXAMPLE TASK");
                         /* Map1 = new HashMap<String, String>();
                         Map1.put("name", "homework");
                         Map1.put("progress", "100");
                         Map1.put("done", "true");
                         mDatabaseReference.setValue(Map1); */
-                            // mDatabaseReference = mDatabaseReference.getParent().child("Events");
-                            //Map1 = new HashMap<String, String>();
-                            // mDatabaseReference.setValue("EXAMPLE EVENT");
+                                // mDatabaseReference = mDatabaseReference.getParent().child("Events");
+                                //Map1 = new HashMap<String, String>();
+                                // mDatabaseReference.setValue("EXAMPLE EVENT");
                         /*Map1.put("name", "cse110");
                         Map1.put("start", "100000");
                         Map1.put("end", "100001");
@@ -203,15 +202,15 @@ public void createAccount(View v) {
                             }
                         }); */
 
-                            Intent intent = new Intent(view.getContext(), Login.class);
-                            startActivity(intent);
-                        }
+                                Intent intent = new Intent(view.getContext(), Login.class);
+                                startActivity(intent);
+                            }
 
-                        // ...
-                    }
-                });
+                            // ...
+                        }
+                    });
+        }
     }
-}
 }
 
 

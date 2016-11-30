@@ -88,15 +88,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             //case R.id.bLogin:
 
 
-
-
-               // break;
+            // break;
             case R.id.tvRegisterLink:
-                Intent intenta= new Intent(this, Register.class);
+                Intent intenta = new Intent(this, Register.class);
                 startActivity(intenta);
                 // startActivity(new Intent(this, Register.class));
                 break;
@@ -109,10 +107,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
 
 
-
-
-
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -124,17 +120,19 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         ToDoDbHelper.logout();
         PMDbHelper.logout();
     }
+
     @Override
     public void onStop() {
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
-        }}
+        }
+    }
 
-    public void signIn(View v){
+    public void signIn(View v) {
 
         final View view = v;
-        if(etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")){
+        if (etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
             Toast.makeText(Login.this, "please fill all fields",
                     Toast.LENGTH_SHORT).show();
 
@@ -152,7 +150,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             // signed in user can be handled in the listener.
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "signInWithEmail", task.getException());
-                              //  System.out.println("fail");
+                                //  System.out.println("fail");
                                 Toast.makeText(Login.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
                             } else {
@@ -247,10 +245,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         // if firebase is more recent than the local time, then overwrite local database
         //else if (localCal.compareTo(FBCal) < 0) {
-            GPAHelper.removeAllClasses();
-            GPAHelper.localOverwrite();
-            eventHelper.removeAllEvents();
-            eventHelper.localOverwrite();
+        GPAHelper.removeAllClasses();
+        GPAHelper.localOverwrite();
+        eventHelper.removeAllEvents();
+        eventHelper.localOverwrite();
 
             /* Cursor cursor = eventHelper.getAllEvents();
         cursor.moveToFirst();
@@ -258,11 +256,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             System.out.println(cursor.getString(1));
             cursor.moveToNext();
         } */
-            ToDoHelper.removeAllEvents();
-            ToDoHelper.localOverwrite();
-            PMHelper.removeAllPWs();
-            PMHelper.localOverwrite();
-        
+        ToDoHelper.removeAllEvents();
+        ToDoHelper.localOverwrite();
+        PMHelper.removeAllPWs();
+        PMHelper.localOverwrite();
+
 
         // update firebase and local times to be the same
         System.out.println("setting local time");

@@ -57,7 +57,9 @@ public class PMDbHelper extends SQLiteOpenHelper {
     }
 
     // notify whether user is currently logged in
-    public static boolean loggedIn() {return loggedIn;}
+    public static boolean loggedIn() {
+        return loggedIn;
+    }
 
     public static String getUsername() {
         return username;
@@ -138,30 +140,30 @@ public class PMDbHelper extends SQLiteOpenHelper {
         mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     int count = 0;
                     String newName = "";
                     String newUsername = "";
                     String newPassword = "";
-                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                    for (DataSnapshot postPostSnapshot : postSnapshot.getChildren()) {
                         Object data = postPostSnapshot.getValue();
                         System.out.println(data.toString());
                         count++;
 
-                        // if count = 1, then the next value is the class name
+                        // if count = 1, then the next value is the password page name
                         if (count == 1) {
                             newName = data.toString();
                         }
 
-                        // if count = 2, then the next value is the grade name
+                        // if count = 2, then the next value is the username
                         if (count == 2) {
-                            newUsername = data.toString();
+                            newPassword = data.toString();
                         }
 
-                        // if count = 3, then next value is the units, read it, then store all three
+                        // if count = 3, then next value is the password, read it, then store all three
                         // values and reset the count
                         if (count == 3) {
-                            newPassword = data.toString();
+                            newUsername = data.toString();
 
                             PWItem newEntry = new PWItem(newName, newUsername, newPassword);
                             addEntry(newEntry);
@@ -238,7 +240,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
         db.execSQL("UPDATE " + TABLE + " SET " +
                 ENTRY_PASSWORD + " = \"" + newPassword + "\" WHERE " +
                 COL_ENTRY_TITLE + " = \"" + entry.getTitle() + "\" AND " +
-                ENTRY_USERNAME + " = \"" + entry.getUserName() +"\";");
+                ENTRY_USERNAME + " = \"" + entry.getUserName() + "\";");
 
         db.execSQL("UPDATE " + TABLE + " SET " +
                 ENTRY_USERNAME + " = \"" + newUserName + "\" WHERE " +
@@ -250,8 +252,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
     }
 
     // Used to update List of Items
-    public Cursor getAllEvents()
-    {
+    public Cursor getAllEvents() {
         SQLiteDatabase db = this.getWritableDatabase(); // database to work with
 
         String selectQuery = "SELECT * FROM " + TABLE + " ORDER BY " + KEY_ID;
