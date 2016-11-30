@@ -2,7 +2,11 @@ package com.example.des.studentmanagerredux.db;
 
 /**
  * Created by Matt and Nikhil on 10/21/2016.
+ * <p>
+ * The sql databases are based on code originally from the tutorial at
+ * http://mobilesiri.com/android-sqlite-database-tutorial-using-android-studio/
  */
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -52,7 +56,9 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
     }
 
     // notify whether user is currently logged in
-    public static boolean loggedIn() {return loggedIn;}
+    public static boolean loggedIn() {
+        return loggedIn;
+    }
 
     // overwrite the firebase database with the local database
     public void firebaseOverwrite() {
@@ -129,12 +135,12 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     int count = 0;
                     String newTitle = "";
                     boolean newDone = false;
                     String newProgress = "";
-                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                    for (DataSnapshot postPostSnapshot : postSnapshot.getChildren()) {
                         Object data = postPostSnapshot.getValue();
                         System.out.println(data.toString());
                         count++;
@@ -144,9 +150,7 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
                             System.out.println(data.toString());
                             if (data.toString().equals("true")) {
                                 newDone = true;
-                            }
-
-                            else newDone = false;
+                            } else newDone = false;
                         }
 
                         // if count = 2, then the next value is the
@@ -193,6 +197,7 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // add a task to the local database, and then notify firebase
     public void addEvent(ToDoListItem task) {
 
         // get this database, value thingy
@@ -205,8 +210,7 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         // if task is complete, ues "true", else use false
         if (task.isComplete()) {
             values.put(KEY_COMPLETE, "true");
-        }
-        else values.put(KEY_COMPLETE, "false");
+        } else values.put(KEY_COMPLETE, "false");
 
         // insert the tuple into the table
         db.insert(TABLE, null, values);
@@ -226,13 +230,8 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
 
     }
 
-    /*
-    * Matt wrote this; Desmond, feel free to modify it as necessary; it's just supposed to
-    * return a cursor pointing to the entire table of events
-    */
-
-    public Cursor getAllEvents()
-    {
+    // gets all tasks from the local database and returns a cursor that can parse through them
+    public Cursor getAllEvents() {
         SQLiteDatabase db = this.getWritableDatabase(); // database to work with
 
         String selectQuery = "SELECT * FROM " + TABLE + " ORDER BY " + KEY_COMPLETE + " asc;";
@@ -261,14 +260,15 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
 
     }
 
+    // update the name of the task passed in to its new value, and then notify firebase
     public boolean changeEventName(ToDoListItem task, String newName) {
 
         SQLiteDatabase db = this.getWritableDatabase(); // get database
 
         if (!hasEvent(db, newName)) {
             db.execSQL("UPDATE " + TABLE + " SET " +
-                COL_TASK_TITLE + " = \"" + newName + "\" WHERE " +
-                COL_TASK_TITLE + " = \"" + task.getTitle() + "\";");
+                    COL_TASK_TITLE + " = \"" + newName + "\" WHERE " +
+                    COL_TASK_TITLE + " = \"" + task.getTitle() + "\";");
 
             // update firebase
             firebaseOverwrite();
@@ -279,6 +279,7 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         return false; // if name is already present
     }
 
+    // update task's progress, and then notify firebase
     public void updateProgress(ToDoListItem task, int newProgressValue) {
         SQLiteDatabase db = this.getWritableDatabase(); // get database
         db.execSQL("UPDATE " + TABLE + " SET " +
@@ -289,6 +290,7 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
         firebaseOverwrite();
     }
 
+    // update task's checkbox, and then notify firebase
     public void updateCheckbox(ToDoListItem task, boolean isChecked) {
         SQLiteDatabase db = this.getWritableDatabase(); // get database
         db.execSQL("UPDATE " + TABLE + " SET " +

@@ -2,9 +2,12 @@ package com.example.des.studentmanagerredux.db;
 
 /**
  * Created by Des on 11/13/2016.
- *
+ * <p>
  * database for GPA objects, designed to be compatible with the current Calculator without
  * much change
+ * <p>
+ * The sql databases are based on code originally from the tutorial at
+ * http://mobilesiri.com/android-sqlite-database-tutorial-using-android-studio/
  */
 
 import android.content.ContentValues;
@@ -14,6 +17,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import java.util.Calendar;
 import java.util.*;
 
@@ -51,7 +55,9 @@ public class GPADbHelper extends SQLiteOpenHelper {
     }
 
     // notify whether user is currently logged in
-    public static boolean loggedIn() {return loggedIn;}
+    public static boolean loggedIn() {
+        return loggedIn;
+    }
 
     public static String getUsername() {
         return username;
@@ -109,72 +115,6 @@ public class GPADbHelper extends SQLiteOpenHelper {
             cursor.moveToNext();
         }
 
-        /* // get timestamp of most recent firebase sync
-        mDataRef = FirebaseDatabase.getInstance().getReference(username + "/LastAccess");
-        mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                firebaseTime = dataSnapshot.getValue();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-
-        System.out.println(firebaseTime.toString());
-        GregorianCalendar FBCal = new GregorianCalendar();
-        FBCal.setTimeInMillis(Long.getLong(firebaseTime.toString()).longValue());
-        System.out.println(FBCal.getTimeInMillis());
-
-        SharedPreferences sharedPreferences = context.getSharedPreferences("timestamp", MODE_PRIVATE);
-        long localTime = sharedPreferences.getLong("time", 0);
-
-        GregorianCalendar localCal = new GregorianCalendar();
-        localCal.setTimeInMillis(localTime);
-
-        // compare the local and firebase times
-
-        // if the local time is more recent than the firebase time
-        if (localCal.compareTo(FBCal) > 0) {
-
-            // reset the firebase database and fill it with the rows from the local database
-            mDataRef = FirebaseDatabase.getInstance().getReference(username + "/Grades");
-
-            // get cursor of all events locally
-            Cursor cursor = getAllClasses();
-
-            //loop through all the database events
-            cursor.moveToFirst();
-            Map<String, String> gradeMap = new HashMap<String, String>();
-            while (!cursor.isAfterLast()) {
-                String className = cursor.getString(1);
-                String classUnits = cursor.getString(2);
-                int classGrade = cursor.getInt(3);
-
-                // get a unique id for this event
-                String uniqueKey = mDataRef.push().getKey();
-
-                //Use the new reference to add the data
-                mDataRef.child(uniqueKey);
-
-                // map of data being added
-                gradeMap.clear();
-
-                gradeMap.put("class", className);
-                gradeMap.put("units", classUnits);
-                gradeMap.put("grade", "" + classGrade);
-
-                cursor.moveToNext();
-            }
-
-        }
-
-        // otherwise, if the local time is less recent than the firebase time, then clear the local
-        // database and fill it with the rows from firebase
-
-        // update the timestamps */
-
     }
 
     // overwrite the local database with hte data from firebase
@@ -197,12 +137,12 @@ public class GPADbHelper extends SQLiteOpenHelper {
         mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     int count = 0;
                     String newClass = "";
                     String newUnits = "";
                     String newGrade = "";
-                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                    for (DataSnapshot postPostSnapshot : postSnapshot.getChildren()) {
                         Object data = postPostSnapshot.getValue();
                         System.out.println(data.toString());
                         count++;

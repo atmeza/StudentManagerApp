@@ -176,20 +176,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                     mDataRef = FirebaseDatabase.getInstance().getReference("users");
                                     mDataRef = mDataRef.getRoot().child("users").child(username).child("LastAccess");
 
-                                    System.out.println("PATH: " + mDataRef.toString());
-                                    System.out.println("GETTING TIME");
 
                                     mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
-                                            System.out.println("ABOUT TO GET TIME");
-                                            System.out.println("TIME IS: " + dataSnapshot.getValue());
-                                            System.out.println("THIS IS THE TIME BEING GOTTEN");
-                                            //try {
-                                            //    Thread.sleep(300000);                 //1000 milliseconds is one second.
-                                            //} catch(InterruptedException ex) {
-                                            //    Thread.currentThread().interrupt();
-                                            //}
+
                                             completeLogin(view, email.replace('.', '_'), dataSnapshot, dataSnapshot.getValue().toString());
                                         }
 
@@ -215,12 +206,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private void completeLogin(View v, String username, DataSnapshot dataSnap, String time) {
 
-        // firebaseTime = dataSnap.getValue();
-
-        System.out.println("TIME GOTTEN");
-
-        // System.out.println(firebaseTime.toString());
-        // System.out.println("CLASS OF OBJECT: " + firebaseTime.getClass());
+        // get the firebase timestamp and the local timestamp
+        // timestamp functionality is not currently utilized, but is still present in case
+        // of future additions
         GregorianCalendar FBCal = new GregorianCalendar();
         FBCal.setTimeInMillis(Long.parseLong(time));
         System.out.println(FBCal.getTimeInMillis());
@@ -231,31 +219,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         GregorianCalendar localCal = new GregorianCalendar();
         localCal.setTimeInMillis(localTime);
 
-        // compare the local and firebase times
-        System.out.println("LOCAL TIME: " + localCal.getTimeInMillis());
-        System.out.println("ONLINE TIME: " + FBCal.getTimeInMillis());
-
         System.out.println(localCal.compareTo(FBCal));
 
-        // if the local time is more recent than the firebase time, then overwrite firebase
-         /*if (localCal.compareTo(FBCal) > 0) {
-            GPAHelper.firebaseOverwrite();
-            ToDoHelper.firebaseOverwrite();
-        } */
 
-        // if firebase is more recent than the local time, then overwrite local database
-        //else if (localCal.compareTo(FBCal) < 0) {
+        // once logged in, overwrite all the local databases with the info sent from firebase
         GPAHelper.removeAllClasses();
         GPAHelper.localOverwrite();
         eventHelper.removeAllEvents();
         eventHelper.localOverwrite();
-
-            /* Cursor cursor = eventHelper.getAllEvents();
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            System.out.println(cursor.getString(1));
-            cursor.moveToNext();
-        } */
         ToDoHelper.removeAllEvents();
         ToDoHelper.localOverwrite();
         PMHelper.removeAllPWs();
@@ -263,16 +234,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
         // update firebase and local times to be the same
-        System.out.println("setting local time");
         long currTime = System.currentTimeMillis();
         SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
         editor.putLong("time", currTime);
         editor.commit();
 
-        System.out.println("setting online time");
         mDataRef = mDataRef.getRoot().child("users").child(username).child("LastAccess");
         mDataRef.setValue("" + System.currentTimeMillis());
-        System.out.println("online time set");
 
     }
 }

@@ -2,12 +2,12 @@ package com.example.des.studentmanagerredux.db;
 
 /**
  * Created by Des on 11/1/2016.
- *
+ * <p>
  * database for events in the planner/calendar, accepts and returns data as TaskItems
+ * <p>
+ * The sql databases are based on code originally from the tutorial at
+ * http://mobilesiri.com/android-sqlite-database-tutorial-using-android-studio/
  */
-
-//TODO: Can you make the get by date method return a Cursor instead? Also, attempting to insert into the SQL database causes an error
-//Test the above by running, going to the todo list, and pushing the add button
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -67,7 +67,9 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     }
 
     // notify whether user is currently logged in
-    public static boolean loggedIn() {return loggedIn;}
+    public static boolean loggedIn() {
+        return loggedIn;
+    }
 
     // Constructor for the Database helper, utilizes constants defined above to function
     public EventDbHelper(Context context) {
@@ -149,12 +151,12 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
         mDataRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     int count = 0;
                     String newTitle = "";
                     String newStart = "";
                     String newEnd = "";
-                    for (DataSnapshot postPostSnapshot: postSnapshot.getChildren()) {
+                    for (DataSnapshot postPostSnapshot : postSnapshot.getChildren()) {
                         Object data = postPostSnapshot.getValue();
                         System.out.println(data.toString());
                         count++;
@@ -202,7 +204,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
                 KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 KEY_TITLE + " TEXT NOT NULL, " +
                 KEY_START_DATE + " INTEGER NOT NULL, " +
-                KEY_END_DATE  + " INTEGER, " +
+                KEY_END_DATE + " INTEGER, " +
                 KEY_PROGRESS + " INTEGER NOT NULL, " +
                 KEY_COMPLETE + " TEXT NOT NULL);";
 
@@ -217,6 +219,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
         onCreate(db);
     }
 
+    // add new event locally, and then notify firebase
     public void addEvent(TaskItem task) {
 
         // get this database, value thingy
@@ -232,8 +235,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
         // if task is complete, ues "true", else use false
         if (task.isComplete()) {
             values.put(KEY_COMPLETE, "true");
-        }
-        else values.put(KEY_COMPLETE, "false");
+        } else values.put(KEY_COMPLETE, "false");
 
         // insert the tuple into the table
         db.insert(TABLE_NAME, null, values);
@@ -263,38 +265,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
         // loop through all of the results of the above query
         Cursor cursor = db.rawQuery(selectQuery, null);
         return cursor;
-        /*
-        if (cursor.moveToFirst()) {
 
-            // for each result
-            do {
-
-                // get fields from the result
-                String title = cursor.getString(1);
-
-                Calendar start = new GregorianCalendar();
-                start.setTimeInMillis(cursor.getLong(2));
-
-                Calendar end = new GregorianCalendar();
-                end.setTimeInMillis(cursor.getLong(3));
-
-                int progress = cursor.getInt(4);
-
-                boolean complete = false;
-                if (cursor.getString(5) == "true") {
-                    complete = true;
-                }
-
-                // create the TaskItem from the parameters in the result
-                TaskItem event = new TaskItem(start, end, progress, complete, title);
-
-                events.add(event); // insert event into list of events
-            } while (cursor.moveToNext()); // move to next result
-
-        }
-
-        return events; // return the list of events
-*/
     }
 
     /*
@@ -302,8 +273,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     * return a cursor pointing to the entire table of events
     */
 
-    public Cursor getAllEvents()
-    {
+    public Cursor getAllEvents() {
         SQLiteDatabase db = this.getWritableDatabase(); // database to work with
 
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
@@ -312,8 +282,7 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
     }
 
     // removes all elements in the table that share all characteristics with the input TaskItem
-    // **IMPORTANT** If there are any events that are exact copies, all of them will be deleted as
-    // of right now
+    // **IMPORTANT** If there are any events that are exact copies, all of them will be deleted
     public void removeEvent(TaskItem task) {
 
         SQLiteDatabase db = this.getWritableDatabase(); // get database
@@ -331,8 +300,8 @@ public class EventDbHelper extends SQLiteOpenHelper implements Serializable {
 
     }
 
-    public void removeAllEvents()
-    {
+    // remove all events from the database, used during a local overwrite from firebase
+    public void removeAllEvents() {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.execSQL("DELETE FROM " + TABLE_NAME + ";");

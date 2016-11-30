@@ -12,6 +12,10 @@ import android.widget.TextView;
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
 TODO: Document functionality
 */
@@ -88,7 +92,9 @@ public class TaskItemView extends LinearLayout {
 
     public void updateTaskView()
     {
-        mTitle.setText(task.getTitle());
+        DateFormat df = new SimpleDateFormat("H:mm");
+        String date = task.getTitle() + ": " + df.format(task.getStart().getTime());
+        mTitle.setText(date);
         mProgress.setMax(TaskItem.PROGRESS_MAX);
         mProgress.setProgress(task.getProgress());
     }

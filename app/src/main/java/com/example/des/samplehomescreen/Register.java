@@ -139,69 +139,18 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                             // to the login page
                             else {
 
+                                // update the user's online timestamp
                                 mDatabaseReference = FirebaseDatabase.getInstance().getReference("users");
                                 mDatabaseReference = mDatabaseReference.child(email.replace('.', '_'));
-                                // mDatabaseReference = mDatabaseReference.child("Grades");
-                                // mDatabaseReference.setValue("EXAMPLE GRADE");
                                 mDatabaseReference = mDatabaseReference.child("LastAccess");
                                 mDatabaseReference.setValue("" + System.currentTimeMillis());
-
-                                mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                        System.out.println("REGISTER, THIS IS THE TIME: " + dataSnapshot.getValue().toString());
-                                    }
-
-                                    @Override
-                                    public void onCancelled(DatabaseError databaseError) {
-
-                                    }
-                                });
 
                                 // store current time locally as well
                                 SharedPreferences.Editor editor = getSharedPreferences("timestamp", MODE_PRIVATE).edit();
                                 editor.putLong("time", System.currentTimeMillis());
                                 editor.commit();
 
-                        /*Map<String, String> Map1 = new HashMap<String, String>();
-                        Map1.put("class", "cse110");
-                        Map1.put("units", "4");
-                        Map1.put("letter", "A");
-                        mDatabaseReference.setValue(Map1); */
-                                // mDatabaseReference = mDatabaseReference.getParent().child("ToDo");
-                                // mDatabaseReference.setValue("EXAMPLE TASK");
-                        /* Map1 = new HashMap<String, String>();
-                        Map1.put("name", "homework");
-                        Map1.put("progress", "100");
-                        Map1.put("done", "true");
-                        mDatabaseReference.setValue(Map1); */
-                                // mDatabaseReference = mDatabaseReference.getParent().child("Events");
-                                //Map1 = new HashMap<String, String>();
-                                // mDatabaseReference.setValue("EXAMPLE EVENT");
-                        /*Map1.put("name", "cse110");
-                        Map1.put("start", "100000");
-                        Map1.put("end", "100001");
-                        mDatabaseReference.setValue(Map1);
-                        mDatabaseReference = mDatabaseReference.getParent().child("EXAMPLE EVENT2");
-                        Map1.clear();
-                        Map1.put("name", "cse10");
-                        Map1.put("start", "100");
-                        Map1.put("end", "0001");
-                        mDatabaseReference.setValue(Map1);
-                        mDatabaseReference = mDatabaseReference.getParent(); */
-                        /* mDatabaseReference = mDatabaseReference.getParent().child("LastAccess");
-                        mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                Object o = dataSnapshot.getValue();
-                                System.out.println("TIME IS: " + o.toString());
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-                            }
-                        }); */
-
+                                // return to the login page after the successful register
                                 Intent intent = new Intent(view.getContext(), Login.class);
                                 startActivity(intent);
                             }

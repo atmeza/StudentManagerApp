@@ -22,6 +22,9 @@ import java.util.Map;
 
 /**
  * Created by Nikhil on 11/26/2016.
+ * <p>
+ * The sql databases are based on code originally from the tutorial at
+ * http://mobilesiri.com/android-sqlite-database-tutorial-using-android-studio/
  */
 
 public class PMDbHelper extends SQLiteOpenHelper {
@@ -35,15 +38,15 @@ public class PMDbHelper extends SQLiteOpenHelper {
     private static final String ENTRY_USERNAME = "username";
     private static final String ENTRY_PASSWORD = "password";
 
-    public PMDbHelper(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
-    }
-
-    // static variables so that database knows whether to sync to firebase
+    // variables related to firebase
     private static boolean loggedIn; // whether user is logged in
     private static String username; // username of logged in user
     private static long lastAccess; // last time of access
     private DatabaseReference mDataRef;
+
+    public PMDbHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
 
     // tell database that user is logged in
     public static void login(String un) {
@@ -195,6 +198,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    // add a new entry to the local table, and then overwrite firebase to ensure it is synced
     public void addEntry(PWItem entry) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -208,6 +212,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
         firebaseOverwrite();
     }
 
+    // remove an entry from the local table and then notify firebase
     public void removeEntry(PWItem entry) {
         SQLiteDatabase db = this.getWritableDatabase(); // get database
 
@@ -219,6 +224,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
         firebaseOverwrite();
     }
 
+    // see if the local database has an entry with the given title and username
     public boolean hasEvent(SQLiteDatabase db, String entryTitle, String entryUserName) {
 
         String query = "SELECT * FROM " + TABLE + " WHERE " +
@@ -230,6 +236,7 @@ public class PMDbHelper extends SQLiteOpenHelper {
 
     }
 
+    // update the username and password of the PWIten passed in, and then notify firebase
     public boolean changeUserNameAndPassword(PWItem entry, String newUserName, String newPassword) {
         SQLiteDatabase db = this.getWritableDatabase(); // get database
 
