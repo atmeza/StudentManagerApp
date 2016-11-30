@@ -328,4 +328,12 @@ public class GPADbHelper extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_NAME + ";"); // remove everything from
 
     }
+
+    // remove all classes and then sync with firebase
+    public void removeClassesSync() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DELETE FROM " + TABLE_NAME + ";");
+        firebaseOverwrite();
+    }
 }
