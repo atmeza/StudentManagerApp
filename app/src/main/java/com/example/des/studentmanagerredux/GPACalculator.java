@@ -36,8 +36,6 @@ public class GPACalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gpa_calculator);
-
-
     }
 
     @Override
@@ -64,7 +62,6 @@ public class GPACalculator extends AppCompatActivity {
         if (editTextListUnits.size() == 0) {
             addRow();
         }
-
     }
 
     // onStop method will overwrite existing SQL database with whatever is in the GPACalculator
@@ -104,20 +101,17 @@ public class GPACalculator extends AppCompatActivity {
         tableLayout.addView(tableRow);
     }
 
+    // new row to layout
     private void addRow(){
         addRow("","",0);
     }
 
-
+    // makes delete button for each row that removes data in course, unit, and
+    // grade fields in that row and row
     private Button buttonDelete(){
         Button button = new Button(this);
         button.setId(nextRowId);
-
         button.setText("Delete");
-        //Drawable drawable = new Drawable;
-        //Drawable.createFromPath("@drawable/delete_button");
-
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Button button = (Button)v;
@@ -134,7 +128,6 @@ public class GPACalculator extends AppCompatActivity {
                         tableLayout.refreshDrawableState();
                         return;
                     }
-
                 }
             }
         });
@@ -150,7 +143,6 @@ public class GPACalculator extends AppCompatActivity {
         EditText editText = new EditText(this);
         editText.setId(Integer.valueOf(hint));
         editText.setText(title);
-        //editText.setHint(hint);
         editTextListCourse.add(editText);
         return editText;
     }
@@ -160,7 +152,6 @@ public class GPACalculator extends AppCompatActivity {
         EditText editText = new EditText(this);
         editText.setId(Integer.valueOf(hint));
         editText.setText(units);
-        //editText.setHint(hint);
         editTextListUnits.add(editText);
         return editText;
     }
@@ -168,14 +159,11 @@ public class GPACalculator extends AppCompatActivity {
     // makes a new grade spinner with a default position
     private Spinner spinnerGradeWithValue(int grade) {
         Spinner spinner = new Spinner(this);
-        //Spinner.setId(Integer.valueOf(hint));
-        //editText.setHint(hint);
         String[] items = new String[]{"Select", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spinner.setAdapter(adapter);
         spinner.setSelection(grade);
         spinnerList.add(spinner);
-
         return spinner;
     }
 
@@ -185,80 +173,45 @@ public class GPACalculator extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
-
+    // empty course field
     private EditText editTextCourse(String hint) {
         EditText editText = new EditText(this);
         editText.setId(Integer.valueOf(hint));
-        //editText.setHint(hint);
         editTextListCourse.add(editText);
         return editText;
     }
 
-
-
+    // empty units field
     private EditText editTextUnits(String hint) {
         EditText editText = new EditText(this);
         editText.setId(Integer.valueOf(hint));
-        //editText.setHint(hint);
         editTextListUnits.add(editText);
         return editText;
     }
 
-
-
+    // empty grade field
     private Spinner spinnerGrade() {
         Spinner spinner = new Spinner(this);
-        //Spinner.setId(Integer.valueOf(hint));
-        //editText.setHint(hint);
         String[] items = new String[]{"Select", "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D", "F"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spinner.setAdapter(adapter);
         spinnerList.add(spinner);
-
         return spinner;
     }
 
-
-
+    // new row
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add_task:
                 addRow();
-
-                /*String task = "ABCDE";
-                SQLiteDatabase db = mHelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(TaskContract.TaskEntry.COL_TASK_TITLE, task);
-                db.insertWithOnConflict(TaskContract.TaskEntry.GPATABLECOURSE,
-                        null,
-                        values,
-                        SQLiteDatabase.CONFLICT_REPLACE);
-                db.close();*/
-
-
-                /*final EditText taskEditText = new EditText(this);
-                AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("Add a new task")
-                        .setMessage("What do you want to do next?")
-                        .setView(taskEditText)
-                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
-                        .setNegativeButton("Cancel", null)
-                        .create();
-                dialog.show();*/
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    // calculate GPA using values in unit and grade fields
     public void sendMessageCalculateGPA(View view)
     {
         double values[] = {-1, 4.0, 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.0, 0};
@@ -277,19 +230,15 @@ public class GPACalculator extends AppCompatActivity {
             }
             catch(NumberFormatException e) {}
 
-
             if ((points >= 0) && (credits > 0)) {
                 totalCredits += credits;
                 totalPoints += points * credits;
             }
         }
-
         double GPA = 0;
         if(totalCredits > 0){
             GPA = totalPoints / totalCredits;
-            //     maxGPA= (totalPoints+4*(maxCredits-totalCredits))/maxCredits;
         }
-
         String s;
         if(GPA == 0){
             s = "Enter data!";
@@ -300,7 +249,6 @@ public class GPACalculator extends AppCompatActivity {
             GPA/=100;
             s = "Your GPA is: " + Double.toString(GPA);
         }
-
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("GPA")
                 .setMessage(s)
