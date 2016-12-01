@@ -41,6 +41,7 @@ import java.util.Objects;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
+    //declare's these variable for the whole class
     Button bLogin;
     EditText etUsername, etPassword;
     TextView tvRegisterLink;
@@ -54,6 +55,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private ToDoDbHelper ToDoHelper = new ToDoDbHelper(this);
     private EventDbHelper eventHelper = new EventDbHelper(this);
     private PMDbHelper PMHelper = new PMDbHelper(this);
+
+
+    //sets up the furebase authentication object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,13 +134,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void signIn(View v) {
-
+        /*
+         *checks to make sure all the fields are not null and are filled
+         * displays an error message
+         */
         final View view = v;
         if (etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
             Toast.makeText(Login.this, "please fill all fields",
                     Toast.LENGTH_SHORT).show();
 
-        } else {
+        }
+        else {
             final String email = etUsername.getText().toString();
             String password = etPassword.getText().toString();
             mAuth.signInWithEmailAndPassword(email, password)

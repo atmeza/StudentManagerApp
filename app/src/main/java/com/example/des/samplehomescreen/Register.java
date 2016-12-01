@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
-
+    //declare's these variable for the whole class
     Button bRegister;
     EditText etName, etAge, etUsername, etPassword;
     private FirebaseAuth mAuth;
@@ -41,6 +41,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private static final String TAG = "Login";
     private static DatabaseReference mDatabaseReference;
 
+
+
+    // sets up the firebase authentication object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +116,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     }
 
     public void createAccount(View v) {
+
+         //checks to make sure all the fields are not null and are filled
+          //displays an error message
+
         final View view = v;
         if (etAge.getText().toString().equals("") || etName.getText().toString().equals("")
                 || etPassword.getText().toString().equals("") || etUsername.getText().toString().equals("")) {
