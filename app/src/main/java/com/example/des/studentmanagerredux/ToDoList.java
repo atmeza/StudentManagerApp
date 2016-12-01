@@ -33,6 +33,9 @@ import com.example.des.studentmanagerredux.todo.ToDoListItem;
  *  Tasks that are completed are given a different colored background and moved to the bottom of the
  *  list. The user is prevented from creating two different tasks with the same title.
  *
+ *  Some parts of this class were written with help from the following tutorial:
+ *  https://www.sitepoint.com/starting-android-development-creating-todo-app/ 
+ *
  */
 
 public class ToDoList extends AppCompatActivity {
