@@ -1,5 +1,4 @@
 
-
 package com.example.des.samplehomescreen;
 
 
@@ -37,6 +36,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
+// Firebase authentication based on the tutorial at
+// firebase.google.com/docs/auth/android/custom-auth
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 

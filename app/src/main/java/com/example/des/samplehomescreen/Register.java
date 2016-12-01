@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+// Firebase authentication based on the tutorial at
+// firebase.google.com/docs/auth/android/custom-auth
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
