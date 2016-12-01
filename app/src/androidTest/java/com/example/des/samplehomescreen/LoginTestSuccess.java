@@ -1,8 +1,6 @@
 package com.example.des.samplehomescreen;
 
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.idling.CountingIdlingResource;
@@ -14,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import com.example.des.studentmanagerredux.R;
-import com.example.des.studentmanagerredux.db.EventDbHelper;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -36,24 +33,22 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class LoginTestSuccessful {
+public class LoginTestSuccess {
 
     CountingIdlingResource idleres;
-
-    @Rule
-    public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
 
     @Before
     public void setup()
     {
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
         idleres = new CountingIdlingResource("Login");
         Espresso.registerIdlingResources(idleres);
     }
 
+    @Rule
+    public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
+
     @Test
-    public void loginTestSuccessful() {
+    public void loginTestSuccess() {
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.etUsername), isDisplayed()));
         appCompatEditText.perform(click());
@@ -83,18 +78,6 @@ public class LoginTestSuccessful {
                 idleres.decrement();
             }
         }.start();
-
-        ViewInteraction textView = onView(
-                allOf(withId(R.id.textView), withText("Student Manager"),
-                        childAtPosition(
-                                allOf(withId(R.id.activity_home_screen),
-                                        childAtPosition(
-                                                withId(android.R.id.content),
-                                                0)),
-                                2),
-                        isDisplayed()));
-        textView.check(matches(withText("Student Manager")));
-
     }
 
     private static Matcher<View> childAtPosition(
