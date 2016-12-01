@@ -21,14 +21,24 @@ import com.example.des.studentmanagerredux.todo.ToDoListItem;
 
 /**
  * Created by Nikhil on 11/26/2016.
+ *
+ * The Password Manager helps the user keep track of his login info for various services. Each
+ * PasswordManagerItem contains information on the title of the service (ex. Google, TritonLink,
+ * Neopets). When an Item is created, only the title is displayed for a sense of security.
+ * Clicking on the item will display the username and password and allow the user to change either
+ * of those fields.
+ *
+ * The user is prevented from creating two items with the same username for the same service
+ *
  */
 
 public class PasswordManager extends AppCompatActivity {
-    private PMDbHelper dbHelper;
+    private PMDbHelper dbHelper; // Database to hold entry information
+    // Used for PasswordManager display
     private ListView mTaskListView;
     private PWAdapter mAdapter;
 
-
+    /* Called when page is opened, creates display */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +58,7 @@ public class PasswordManager extends AppCompatActivity {
             }
         });
 
+        // FloatingActionButton used to add items to PasswordList
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +68,10 @@ public class PasswordManager extends AppCompatActivity {
         });
     }
 
+    /**
+     * Adds an entry to the PasswordManager
+     * @param fab - The button which you click to add an item
+     */
     private void addItem(FloatingActionButton fab) {
         LinearLayout layout = new LinearLayout(fab.getContext());
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -108,6 +123,7 @@ public class PasswordManager extends AppCompatActivity {
         mTaskListView.setAdapter(mAdapter);
     }
 
+    /* Refreshes the entire page */
     @Override
     protected void onRestart() {
         super.onRestart();

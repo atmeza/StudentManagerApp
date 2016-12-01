@@ -13,10 +13,14 @@ import com.example.des.studentmanagerredux.pwmanager.PWItemView;
 
 /**
  * Created by Nikhil on 11/11/2016.
+ *
+ * Adapter used to display PWItem on PasswordManager
+ *
  */
 
 public class PWAdapter extends CursorAdapter {
 
+    // The list to display PWItems on
     private PasswordManager list;
 
     public PWAdapter(PasswordManager context, Cursor c, int flags)
@@ -54,6 +58,7 @@ public class PWAdapter extends CursorAdapter {
         }
     }
 
+    // Alternates gray and white backgrounds on display
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);

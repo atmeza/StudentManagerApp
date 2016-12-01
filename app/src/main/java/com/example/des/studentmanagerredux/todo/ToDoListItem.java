@@ -2,6 +2,9 @@ package com.example.des.studentmanagerredux.todo;
 
 /**
  * Created by Nikhil on 11/11/2016.
+ *
+ * Contains getters and setters for properties of a ToDoListItem
+ *
  */
 
 public class ToDoListItem {
@@ -50,7 +53,6 @@ public class ToDoListItem {
     public void markComplete(boolean complete)
     {
         this.complete = complete;
-        //this.progress = complete ? PROGRESS_MAX : progress;
     }
 
     public void setTitle(String title)

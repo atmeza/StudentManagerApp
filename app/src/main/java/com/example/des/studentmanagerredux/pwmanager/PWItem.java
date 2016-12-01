@@ -2,6 +2,9 @@ package com.example.des.studentmanagerredux.pwmanager;
 
 /**
  * Created by Nikhil on 11/26/2016.
+ *
+ * Contains getters and setters for Password Manager Item
+ *
  */
 
 public class PWItem {

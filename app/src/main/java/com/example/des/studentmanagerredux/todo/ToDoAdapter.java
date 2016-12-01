@@ -10,7 +10,9 @@ import android.widget.CursorAdapter;
 import com.example.des.studentmanagerredux.ToDoList;
 
 /**
- * Created by Nikhil on 11/11/2016.
+ * Created by Matt on 11/11/2016.
+ *
+ *  Adapter used to display ToDoListItems on ToDoList
  */
 
 public class ToDoAdapter extends CursorAdapter {
@@ -52,6 +54,7 @@ public class ToDoAdapter extends CursorAdapter {
         }
     }
 
+    // Alternates gray and white backgrounds on display
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);

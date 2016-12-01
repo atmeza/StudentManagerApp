@@ -21,16 +21,19 @@ import java.nio.channels.AlreadyBoundException;
 
 /**
  * Created by Nikhil on 11/26/2016.
+ *
+ * The component that holds PWItem, displayed on PasswordManager
  */
 
 public class PWItemView extends LinearLayout {
 
-    private TextView mTitle;
-    private Button mDeleteButton;
+    private TextView mTitle; // Display title and change properties of PWItem
+    private Button mDeleteButton; // Used to delete item from list
 
-    private PWItem item;
-    private PasswordManager pwManager;
+    private PWItem item; // each item has its own view
+    private PasswordManager pwManager; // the list that items are displayed on
 
+    /* Constructors */
     public PWItemView(Context context, PasswordManager list)
     {
         super(context);
@@ -50,6 +53,12 @@ public class PWItemView extends LinearLayout {
         initializeViews(context);
     }
 
+    /**
+     * Inflates the views in the layout.
+     *
+     * @param context
+     *           the current context for the view.
+     */
     private void initializeViews(final Context context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -112,21 +121,26 @@ public class PWItemView extends LinearLayout {
         mTitle.setText(item.getTitle());
     }
 
+    /* Dialog to change UserName and Password after entry is already created */
     public void changeUserNameAndPassword() {
         LinearLayout layout = new LinearLayout(this.getContext());
         layout.setOrientation(LinearLayout.VERTICAL);
 
+        // Contains username info, can be edited
         final EditText userNameText = new EditText(this.getContext());
         userNameText.setText(item.getUserName());
         layout.addView(userNameText);
 
+        // Contains password info, can be edited
         final EditText passwordText = new EditText(this.getContext());
         passwordText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         passwordText.setText(item.getPassword());
         layout.addView(passwordText);
 
+        // database to make changes
         final PMDbHelper dbHelper = new PMDbHelper(this.getContext());
 
+        // Display dialog
         AlertDialog dialog = new AlertDialog.Builder(this.getContext())
                 .setTitle("New UserName and Password")
                 .setView(layout)
@@ -161,6 +175,7 @@ public class PWItemView extends LinearLayout {
 
     public PWItem getItem() { return item; }
 
+    /* Error dialog in case of invalid input */
     public void showErrorDialog () {
         View v = this.mTitle;
         AlertDialog dialog = new AlertDialog.Builder(v.getContext()) // Dialog for new name

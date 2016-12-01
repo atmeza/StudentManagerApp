@@ -23,26 +23,24 @@ import com.example.des.studentmanagerredux.ToDoList;
 import com.example.des.studentmanagerredux.db.ToDoDbHelper;
 import com.example.des.studentmanagerredux.R;
 
-/*
-TODO: Document functionality
-*/
-
 /**
  * Created by Matt on 10/25/16.
  *
  * Compound control class for displaying tasks in to-do list
+ * The component that holds ToDoListItem, displayed on ToDoList
  */
 
 public class ToDoListItemView extends LinearLayout {
 
-    private TextView mTitle;
-    private CheckBox mCheck;
-    private Button mDeleteButton;
-    private SeekBar mProgress;
+    private TextView mTitle; // Display and change title of ToDoListItem
+    private CheckBox mCheck; // Change whether or not ToDoListItem is completed
+    private Button mDeleteButton; // Used to delete ToDoListItem from list
+    private SeekBar mProgress; // Change progress of ToDoListItem
 
-    private ToDoListItem item;
-    private ToDoList list;
+    private ToDoListItem item; // Each item has its own view
+    private ToDoList list; // The list that the items are displayed on
 
+    /* Constructors */
     public ToDoListItemView(Context context, ToDoList list)
     {
         super(context);
@@ -77,6 +75,7 @@ public class ToDoListItemView extends LinearLayout {
         mCheck = (CheckBox) this
                 .findViewById(R.id.task_item_checkBox);
 
+        // Allows user to change completion
         mCheck.setOnClickListener(new CheckBox.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +90,7 @@ public class ToDoListItemView extends LinearLayout {
         mProgress = (SeekBar) this
                 .findViewById(R.id.task_item_view_progress);
 
+        // Allows user to change progress, updates database and refreshes view
         mProgress.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -112,7 +112,7 @@ public class ToDoListItemView extends LinearLayout {
         mTitle = (TextView) this
                 .findViewById(R.id.task_item_view_title);
 
-        // Changes name by selecting on task text
+        // Changes name by selecting on task text, updates database and refreshes view
         mTitle.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,7 +149,7 @@ public class ToDoListItemView extends LinearLayout {
         mDeleteButton = (Button) this
                 .findViewById(R.id.task_item_view_delete);
 
-        // Deletes task by hitting delete button
+        // Deletes task by hitting delete button, updates database and refreshes view
         mDeleteButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,6 +168,7 @@ public class ToDoListItemView extends LinearLayout {
         return item.isComplete();
     }
 
+    /* updateTaskView() and setTask() used to update list */
     public void updateTaskView()
     {
         mCheck.setChecked(item.isComplete());
@@ -192,7 +193,8 @@ public class ToDoListItemView extends LinearLayout {
         super.onFinishInflate();
     }
 
-    public void showErrorDialog () {
+    /* Error dialog for invalid inputs */
+    private void showErrorDialog () {
         View v = this.mTitle;
         AlertDialog dialog = new AlertDialog.Builder(v.getContext()) // Dialog for new name
                 .setTitle("Error: New Task Name Already Exists")
