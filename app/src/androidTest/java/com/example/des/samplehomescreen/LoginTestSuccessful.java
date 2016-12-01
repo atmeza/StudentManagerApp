@@ -1,7 +1,11 @@
 package com.example.des.samplehomescreen;
 
 
+import android.content.Context;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.Espresso;
 import android.support.test.espresso.ViewInteraction;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
@@ -10,10 +14,12 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import com.example.des.studentmanagerredux.R;
+import com.example.des.studentmanagerredux.db.EventDbHelper;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,8 +38,19 @@ import static org.hamcrest.Matchers.allOf;
 @RunWith(AndroidJUnit4.class)
 public class LoginTestSuccessful {
 
+    CountingIdlingResource idleres;
+
     @Rule
     public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
+
+    @Before
+    public void setup()
+    {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        idleres = new CountingIdlingResource("Login");
+        Espresso.registerIdlingResources(idleres);
+    }
 
     @Test
     public void loginTestSuccessful() {
@@ -52,6 +69,20 @@ public class LoginTestSuccessful {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.bLogin), withText("Login"), isDisplayed()));
         appCompatButton.perform(click());
+
+        idleres.increment();
+
+        new Thread()
+        {
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                idleres.decrement();
+            }
+        }.start();
 
         ViewInteraction textView = onView(
                 allOf(withId(R.id.textView), withText("Student Manager"),

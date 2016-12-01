@@ -18,6 +18,7 @@ import android.view.ViewParent;
 
 import com.example.des.studentmanagerredux.R;
 import com.example.des.studentmanagerredux.db.EventDbHelper;
+import com.example.des.studentmanagerredux.db.ToDoDbHelper;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -46,14 +47,16 @@ import static org.hamcrest.Matchers.is;
 @RunWith(AndroidJUnit4.class)
 public class ToDoTest {
     CountingIdlingResource idleres;
-    EventDbHelper db;
+    ToDoDbHelper db;
 
     @Before
     public void setup()
     {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        db = new EventDbHelper(appContext);
+        db = new ToDoDbHelper(appContext);
+        ToDoDbHelper.login("mhatch@ucsd_edu");
+        db.removeTasksSync();
         idleres = new CountingIdlingResource("Login");
         Espresso.registerIdlingResources(idleres);
     }
@@ -122,6 +125,8 @@ public class ToDoTest {
                         isDisplayed()));
         appCompatButton3.perform(click());
 
+        idleres.increment();
+
         new Thread()
         {
             public void run() {
@@ -151,6 +156,8 @@ public class ToDoTest {
                                 withParent(withId(R.id.parentPanel)))),
                         isDisplayed()));
         appCompatButton4.perform(click());
+
+        idleres.increment();
 
         new Thread()
         {
@@ -182,11 +189,13 @@ public class ToDoTest {
                         isDisplayed()));
         appCompatButton5.perform(click());
 
+        idleres.increment();
+
         new Thread()
         {
             public void run() {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -204,6 +213,8 @@ public class ToDoTest {
                                 0),
                         isDisplayed()));
         textView.check(matches(withText("Error: New Task Name Already Exists")));
+
+        idleres.increment();
 
         new Thread()
         {
