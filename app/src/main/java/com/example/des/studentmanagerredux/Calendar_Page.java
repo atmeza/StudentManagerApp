@@ -1,6 +1,6 @@
 package com.example.des.studentmanagerredux;
 
-//Created by Tyger 10-30-16
+//Created by Tyger Yang 10-30-16
 
 import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,10 +25,12 @@ import com.example.des.studentmanagerredux.task.TaskAdapter;
 
 import java.util.ArrayList;
 
+/* This is the main class for the Calendar Activity */
 public class Calendar_Page extends AppCompatActivity {
 
     final Context context = this;
     private Button button;
+    // A calendar variable to ease the transfer of calender between fragments
     public GregorianCalendar currentDate;
 
 
@@ -52,6 +54,7 @@ public class Calendar_Page extends AppCompatActivity {
                 currentDate = new GregorianCalendar(year,month,dayOfMonth);
                 List_Fragment list_fragment = (List_Fragment)getSupportFragmentManager().findFragmentByTag("List_Fragment");
 
+                // If there is not list_fragment instantiated create a new one
                 if(list_fragment==null){
                     list_fragment = new List_Fragment();
 
@@ -68,6 +71,7 @@ public class Calendar_Page extends AppCompatActivity {
         });
     }
 
+    // Getter method for the currentDate variable
     public GregorianCalendar getCurrentDate() {
         return currentDate;
     }
